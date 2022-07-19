@@ -24,6 +24,9 @@ namespace BookstoreLibrary.GUI
                 e.Cancel = true;
                 textBox1.Focus();
                 errorProvider1.SetError(textBox1, "Empty username");
+            } else
+            {
+                e.Cancel = false;
             }
         }
     }
