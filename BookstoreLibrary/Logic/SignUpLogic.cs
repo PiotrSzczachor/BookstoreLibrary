@@ -27,11 +27,12 @@ namespace BookstoreLibrary.Logic
             return new EmailAddressAttribute().IsValid(source);
         }
 
-        private void addNewUser(string name, string surname, string email, string phone, string username, string password)
+        private void addNewUser(string name, string surname, string email, string phone, string username, string password, Address address)
         {
             using (var db = new BookstoreLibContext())
             {
-                User newUser = new User { Name = name, Surname = surname, Email = email, };
+                DateTime joinDate = DateTime.Now;
+                User newUser = new User { Name = name, Surname = surname, Username = username, Email = email, PhoneNumber = phone};
             }
         }
 
@@ -45,7 +46,7 @@ namespace BookstoreLibrary.Logic
                 {
                     if (isPasswordValid)
                     {
-                        addNewUser(name, surname, email, phone, username, password);
+                        //addNewUser(name, surname, email, phone, username, password);
                     }
                     else
                     {

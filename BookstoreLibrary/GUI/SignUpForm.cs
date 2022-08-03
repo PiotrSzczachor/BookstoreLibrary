@@ -39,7 +39,7 @@ namespace BookstoreLibrary.GUI
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             SignUpLogic signUpLogic = new SignUpLogic();
-            signUpLogic.signUp()
+            //signUpLogic.signUp();
             Email email = new Email();
             string body = "Hello " + NameBox.Text + "!\nYour account in out Bookstore&Library is now active. You can now login using your username: " + UsernameBox.Text;
             email.sendEmail(EmailBox.Text, body, "Bookstore&Library confirmation email");
@@ -65,5 +65,6 @@ namespace BookstoreLibrary.GUI
         {
              System.Diagnostics.Process.Start("https://termly.io/products/terms-and-conditions-generator/");
         }
+
     }
 }

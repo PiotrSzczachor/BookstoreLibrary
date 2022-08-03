@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignUpForm));
             this.NameBox = new System.Windows.Forms.TextBox();
             this.SurnameBox = new System.Windows.Forms.TextBox();
@@ -42,8 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.CharNumbersPB = new System.Windows.Forms.PictureBox();
             this.SpecialCharPB = new System.Windows.Forms.PictureBox();
             this.CapitalLetterPB = new System.Windows.Forms.PictureBox();
@@ -59,8 +56,17 @@
             this.SignUpButton = new System.Windows.Forms.Button();
             this.PhoneCodesComboBox = new System.Windows.Forms.ComboBox();
             this.termsLinkLabel = new System.Windows.Forms.LinkLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            this.PostalCodeLabel = new System.Windows.Forms.Label();
+            this.PostalCodeComboBox = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CityComboBox = new System.Windows.Forms.Label();
+            this.StreetLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.ContactLabel = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CharNumbersPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialCharPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CapitalLetterPB)).BeginInit();
@@ -69,32 +75,32 @@
             // 
             // NameBox
             // 
-            this.NameBox.Location = new System.Drawing.Point(107, 11);
-            this.NameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.NameBox.Location = new System.Drawing.Point(110, 26);
+            this.NameBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(184, 20);
             this.NameBox.TabIndex = 0;
             // 
             // SurnameBox
             // 
-            this.SurnameBox.Location = new System.Drawing.Point(107, 32);
-            this.SurnameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SurnameBox.Location = new System.Drawing.Point(110, 47);
+            this.SurnameBox.Margin = new System.Windows.Forms.Padding(2);
             this.SurnameBox.Name = "SurnameBox";
             this.SurnameBox.Size = new System.Drawing.Size(184, 20);
             this.SurnameBox.TabIndex = 1;
             // 
             // EmailBox
             // 
-            this.EmailBox.Location = new System.Drawing.Point(107, 53);
-            this.EmailBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.EmailBox.Location = new System.Drawing.Point(110, 68);
+            this.EmailBox.Margin = new System.Windows.Forms.Padding(2);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(184, 20);
             this.EmailBox.TabIndex = 2;
             // 
             // PhoneBox
             // 
-            this.PhoneBox.Location = new System.Drawing.Point(165, 73);
-            this.PhoneBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PhoneBox.Location = new System.Drawing.Point(168, 88);
+            this.PhoneBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneBox.Name = "PhoneBox";
             this.PhoneBox.Size = new System.Drawing.Size(126, 20);
             this.PhoneBox.TabIndex = 3;
@@ -102,16 +108,16 @@
             // 
             // UsernameBox
             // 
-            this.UsernameBox.Location = new System.Drawing.Point(107, 94);
-            this.UsernameBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.UsernameBox.Location = new System.Drawing.Point(109, 245);
+            this.UsernameBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(184, 20);
             this.UsernameBox.TabIndex = 4;
             // 
             // PasswordBox
             // 
-            this.PasswordBox.Location = new System.Drawing.Point(107, 115);
-            this.PasswordBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PasswordBox.Location = new System.Drawing.Point(109, 266);
+            this.PasswordBox.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(184, 20);
             this.PasswordBox.TabIndex = 5;
@@ -120,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 13);
+            this.label1.Location = new System.Drawing.Point(14, 28);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
@@ -130,7 +136,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 34);
+            this.label2.Location = new System.Drawing.Point(14, 49);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
@@ -140,7 +146,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 55);
+            this.label3.Location = new System.Drawing.Point(14, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(38, 13);
@@ -150,7 +156,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 75);
+            this.label4.Location = new System.Drawing.Point(14, 90);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 13);
@@ -160,7 +166,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 96);
+            this.label5.Location = new System.Drawing.Point(13, 247);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
@@ -170,26 +176,18 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 117);
+            this.label6.Location = new System.Drawing.Point(13, 268);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 11;
             this.label6.Text = "Password:";
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // errorProvider2
-            // 
-            this.errorProvider2.ContainerControl = this;
-            // 
             // CharNumbersPB
             // 
             this.CharNumbersPB.Image = ((System.Drawing.Image)(resources.GetObject("CharNumbersPB.Image")));
-            this.CharNumbersPB.Location = new System.Drawing.Point(13, 166);
-            this.CharNumbersPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CharNumbersPB.Location = new System.Drawing.Point(15, 309);
+            this.CharNumbersPB.Margin = new System.Windows.Forms.Padding(2);
             this.CharNumbersPB.Name = "CharNumbersPB";
             this.CharNumbersPB.Size = new System.Drawing.Size(16, 17);
             this.CharNumbersPB.TabIndex = 12;
@@ -198,8 +196,8 @@
             // SpecialCharPB
             // 
             this.SpecialCharPB.Image = ((System.Drawing.Image)(resources.GetObject("SpecialCharPB.Image")));
-            this.SpecialCharPB.Location = new System.Drawing.Point(13, 181);
-            this.SpecialCharPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SpecialCharPB.Location = new System.Drawing.Point(15, 324);
+            this.SpecialCharPB.Margin = new System.Windows.Forms.Padding(2);
             this.SpecialCharPB.Name = "SpecialCharPB";
             this.SpecialCharPB.Size = new System.Drawing.Size(16, 17);
             this.SpecialCharPB.TabIndex = 13;
@@ -208,8 +206,8 @@
             // CapitalLetterPB
             // 
             this.CapitalLetterPB.Image = ((System.Drawing.Image)(resources.GetObject("CapitalLetterPB.Image")));
-            this.CapitalLetterPB.Location = new System.Drawing.Point(13, 196);
-            this.CapitalLetterPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.CapitalLetterPB.Location = new System.Drawing.Point(15, 339);
+            this.CapitalLetterPB.Margin = new System.Windows.Forms.Padding(2);
             this.CapitalLetterPB.Name = "CapitalLetterPB";
             this.CapitalLetterPB.Size = new System.Drawing.Size(16, 17);
             this.CapitalLetterPB.TabIndex = 14;
@@ -218,7 +216,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 166);
+            this.label7.Location = new System.Drawing.Point(37, 309);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(220, 13);
@@ -228,7 +226,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(35, 181);
+            this.label8.Location = new System.Drawing.Point(37, 324);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(257, 13);
@@ -238,7 +236,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 196);
+            this.label9.Location = new System.Drawing.Point(37, 339);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(239, 13);
@@ -248,8 +246,8 @@
             // PasswordMatchPB
             // 
             this.PasswordMatchPB.Image = ((System.Drawing.Image)(resources.GetObject("PasswordMatchPB.Image")));
-            this.PasswordMatchPB.Location = new System.Drawing.Point(13, 211);
-            this.PasswordMatchPB.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PasswordMatchPB.Location = new System.Drawing.Point(15, 354);
+            this.PasswordMatchPB.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordMatchPB.Name = "PasswordMatchPB";
             this.PasswordMatchPB.Size = new System.Drawing.Size(16, 17);
             this.PasswordMatchPB.TabIndex = 18;
@@ -258,7 +256,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(35, 211);
+            this.label10.Location = new System.Drawing.Point(37, 354);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(129, 13);
@@ -268,7 +266,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 138);
+            this.label11.Location = new System.Drawing.Point(13, 289);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(93, 13);
@@ -277,8 +275,8 @@
             // 
             // RepeatPasswordBox
             // 
-            this.RepeatPasswordBox.Location = new System.Drawing.Point(107, 136);
-            this.RepeatPasswordBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RepeatPasswordBox.Location = new System.Drawing.Point(109, 287);
+            this.RepeatPasswordBox.Margin = new System.Windows.Forms.Padding(2);
             this.RepeatPasswordBox.Name = "RepeatPasswordBox";
             this.RepeatPasswordBox.Size = new System.Drawing.Size(184, 20);
             this.RepeatPasswordBox.TabIndex = 20;
@@ -287,8 +285,8 @@
             // TermsCheckBox
             // 
             this.TermsCheckBox.AutoSize = true;
-            this.TermsCheckBox.Location = new System.Drawing.Point(14, 232);
-            this.TermsCheckBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.TermsCheckBox.Location = new System.Drawing.Point(16, 375);
+            this.TermsCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.TermsCheckBox.Name = "TermsCheckBox";
             this.TermsCheckBox.Size = new System.Drawing.Size(109, 17);
             this.TermsCheckBox.TabIndex = 22;
@@ -298,8 +296,8 @@
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Location = new System.Drawing.Point(38, 251);
-            this.GoBackButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.GoBackButton.Location = new System.Drawing.Point(40, 394);
+            this.GoBackButton.Margin = new System.Windows.Forms.Padding(2);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(106, 29);
             this.GoBackButton.TabIndex = 23;
@@ -309,8 +307,8 @@
             // SignUpButton
             // 
             this.SignUpButton.Enabled = false;
-            this.SignUpButton.Location = new System.Drawing.Point(149, 251);
-            this.SignUpButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.SignUpButton.Location = new System.Drawing.Point(151, 394);
+            this.SignUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(106, 29);
             this.SignUpButton.TabIndex = 24;
@@ -322,8 +320,8 @@
             // 
             this.PhoneCodesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PhoneCodesComboBox.FormattingEnabled = true;
-            this.PhoneCodesComboBox.Location = new System.Drawing.Point(108, 73);
-            this.PhoneCodesComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.PhoneCodesComboBox.Location = new System.Drawing.Point(111, 88);
+            this.PhoneCodesComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneCodesComboBox.Name = "PhoneCodesComboBox";
             this.PhoneCodesComboBox.Size = new System.Drawing.Size(55, 21);
             this.PhoneCodesComboBox.TabIndex = 25;
@@ -331,7 +329,7 @@
             // termsLinkLabel
             // 
             this.termsLinkLabel.AutoSize = true;
-            this.termsLinkLabel.Location = new System.Drawing.Point(116, 233);
+            this.termsLinkLabel.Location = new System.Drawing.Point(118, 376);
             this.termsLinkLabel.Name = "termsLinkLabel";
             this.termsLinkLabel.Size = new System.Drawing.Size(32, 13);
             this.termsLinkLabel.TabIndex = 26;
@@ -339,11 +337,119 @@
             this.termsLinkLabel.Text = "terms";
             this.termsLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.termsLinkLabel_LinkClicked);
             // 
+            // PostalCodeLabel
+            // 
+            this.PostalCodeLabel.AutoSize = true;
+            this.PostalCodeLabel.Location = new System.Drawing.Point(14, 138);
+            this.PostalCodeLabel.Name = "PostalCodeLabel";
+            this.PostalCodeLabel.Size = new System.Drawing.Size(66, 13);
+            this.PostalCodeLabel.TabIndex = 27;
+            this.PostalCodeLabel.Text = "Postal code:";
+            // 
+            // PostalCodeComboBox
+            // 
+            this.PostalCodeComboBox.FormattingEnabled = true;
+            this.PostalCodeComboBox.Location = new System.Drawing.Point(109, 135);
+            this.PostalCodeComboBox.Name = "PostalCodeComboBox";
+            this.PostalCodeComboBox.Size = new System.Drawing.Size(184, 21);
+            this.PostalCodeComboBox.TabIndex = 28;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(109, 157);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(184, 21);
+            this.comboBox2.TabIndex = 29;
+            // 
+            // CityComboBox
+            // 
+            this.CityComboBox.AutoSize = true;
+            this.CityComboBox.Location = new System.Drawing.Point(14, 160);
+            this.CityComboBox.Name = "CityComboBox";
+            this.CityComboBox.Size = new System.Drawing.Size(27, 13);
+            this.CityComboBox.TabIndex = 30;
+            this.CityComboBox.Text = "City:";
+            // 
+            // StreetLabel
+            // 
+            this.StreetLabel.AutoSize = true;
+            this.StreetLabel.Location = new System.Drawing.Point(14, 182);
+            this.StreetLabel.Name = "StreetLabel";
+            this.StreetLabel.Size = new System.Drawing.Size(38, 13);
+            this.StreetLabel.TabIndex = 31;
+            this.StreetLabel.Text = "Street:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(109, 179);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(184, 21);
+            this.comboBox1.TabIndex = 32;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(109, 202);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(184, 20);
+            this.textBox1.TabIndex = 33;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(14, 205);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(47, 13);
+            this.label12.TabIndex = 34;
+            this.label12.Text = "Number:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.Location = new System.Drawing.Point(118, 114);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(69, 18);
+            this.label13.TabIndex = 35;
+            this.label13.Text = "Address";
+            // 
+            // ContactLabel
+            // 
+            this.ContactLabel.AutoSize = true;
+            this.ContactLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ContactLabel.Location = new System.Drawing.Point(118, 6);
+            this.ContactLabel.Name = "ContactLabel";
+            this.ContactLabel.Size = new System.Drawing.Size(67, 18);
+            this.ContactLabel.TabIndex = 36;
+            this.ContactLabel.Text = "Contact";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.Location = new System.Drawing.Point(116, 225);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(69, 18);
+            this.label14.TabIndex = 37;
+            this.label14.Text = "Account";
+            // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(301, 290);
+            this.ClientSize = new System.Drawing.Size(305, 427);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.ContactLabel);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.StreetLabel);
+            this.Controls.Add(this.CityComboBox);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.PostalCodeComboBox);
+            this.Controls.Add(this.PostalCodeLabel);
             this.Controls.Add(this.termsLinkLabel);
             this.Controls.Add(this.PhoneCodesComboBox);
             this.Controls.Add(this.SignUpButton);
@@ -371,12 +477,10 @@
             this.Controls.Add(this.EmailBox);
             this.Controls.Add(this.SurnameBox);
             this.Controls.Add(this.NameBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SignUpForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SignUpForm";
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharNumbersPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SpecialCharPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CapitalLetterPB)).EndInit();
@@ -400,8 +504,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.PictureBox CharNumbersPB;
         private System.Windows.Forms.PictureBox CapitalLetterPB;
         private System.Windows.Forms.PictureBox SpecialCharPB;
@@ -417,5 +519,16 @@
         private System.Windows.Forms.CheckBox TermsCheckBox;
         private System.Windows.Forms.ComboBox PhoneCodesComboBox;
         private System.Windows.Forms.LinkLabel termsLinkLabel;
+        private System.Windows.Forms.Label PostalCodeLabel;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox PostalCodeComboBox;
+        private System.Windows.Forms.Label CityComboBox;
+        private System.Windows.Forms.Label StreetLabel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label ContactLabel;
+        private System.Windows.Forms.Label label14;
     }
 }
