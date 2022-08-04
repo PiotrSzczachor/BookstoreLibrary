@@ -22,6 +22,8 @@ namespace BookstoreLibrary.GUI
             InitializeComponent();
             Initializer initializer = new Initializer();
             initializer.initPhoneCodesComboBox(PhoneCodesComboBox);
+            initializer.initPostalCodes(PostalCodeComboBox);
+            initializer.initCities(CitiesComboBox);
         }
 
         private void PasswordBox_TextChanged(object sender, EventArgs e)
@@ -66,5 +68,10 @@ namespace BookstoreLibrary.GUI
              System.Diagnostics.Process.Start("https://termly.io/products/terms-and-conditions-generator/");
         }
 
+        private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Initializer initializer = new Initializer();
+            
+        }
     }
 }

@@ -58,7 +58,7 @@
             this.termsLinkLabel = new System.Windows.Forms.LinkLabel();
             this.PostalCodeLabel = new System.Windows.Forms.Label();
             this.PostalCodeComboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.CitiesComboBox = new System.Windows.Forms.ComboBox();
             this.CityComboBox = new System.Windows.Forms.Label();
             this.StreetLabel = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -354,13 +354,14 @@
             this.PostalCodeComboBox.Size = new System.Drawing.Size(184, 21);
             this.PostalCodeComboBox.TabIndex = 28;
             // 
-            // comboBox2
+            // CitiesComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(109, 157);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(184, 21);
-            this.comboBox2.TabIndex = 29;
+            this.CitiesComboBox.FormattingEnabled = true;
+            this.CitiesComboBox.Location = new System.Drawing.Point(109, 157);
+            this.CitiesComboBox.Name = "CitiesComboBox";
+            this.CitiesComboBox.Size = new System.Drawing.Size(184, 21);
+            this.CitiesComboBox.TabIndex = 29;
+            this.CitiesComboBox.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
             // 
             // CityComboBox
             // 
@@ -438,7 +439,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 427);
+            this.ClientSize = new System.Drawing.Size(457, 640);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.ContactLabel);
             this.Controls.Add(this.label13);
@@ -447,7 +448,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.StreetLabel);
             this.Controls.Add(this.CityComboBox);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.CitiesComboBox);
             this.Controls.Add(this.PostalCodeComboBox);
             this.Controls.Add(this.PostalCodeLabel);
             this.Controls.Add(this.termsLinkLabel);
@@ -520,7 +521,7 @@
         private System.Windows.Forms.ComboBox PhoneCodesComboBox;
         private System.Windows.Forms.LinkLabel termsLinkLabel;
         private System.Windows.Forms.Label PostalCodeLabel;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox CitiesComboBox;
         private System.Windows.Forms.ComboBox PostalCodeComboBox;
         private System.Windows.Forms.Label CityComboBox;
         private System.Windows.Forms.Label StreetLabel;
