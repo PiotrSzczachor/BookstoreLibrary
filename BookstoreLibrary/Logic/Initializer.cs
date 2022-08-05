@@ -7,7 +7,6 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
-using BookstoreLibrary.Data;
 
 namespace BookstoreLibrary.Logic
 {
@@ -58,20 +57,30 @@ namespace BookstoreLibrary.Logic
             }
         }
 
-        public void initCities(ComboBox CitiesComboBox)
+        public void initCities(ComboBox CitiesComboBox, string postalCode)
         {
-            string url = "http://kodpocztowy.intami.pl/api/" + "37-700";
+            string url = "http://kodpocztowy.intami.pl/api/" + postalCode;
             var request = WebRequest.Create(url);
             request.Method = "GET";
             var webResponse = request.GetResponse();
             var webStream = webResponse.GetResponseStream();
             var reader = new StreamReader(webStream);
             var data = reader.ReadToEnd();
-            var Cities = JsonConvert.DeserializeObject<dynamic>(data);
-            foreach(var city in Cities)
+            var JsonObject = JsonConvert.DeserializeObject<dynamic>(data);
+            List<string> cities = new List<string>();
+            foreach(var city in JsonObject)
             {
-                Console.WriteLine(city);
+                if (!cities.Contains(city["miejscowosc"].ToString()))
+                {
+                    cities.Add(city["miejscowosc"].ToString());
+                }
+                
             }
+            foreach(var city in cities)
+            {
+                CitiesComboBox.Items.Add(city);
+            }
+            Console.WriteLine("Test");
         }
     }
 }

@@ -23,7 +23,6 @@ namespace BookstoreLibrary.GUI
             Initializer initializer = new Initializer();
             initializer.initPhoneCodesComboBox(PhoneCodesComboBox);
             initializer.initPostalCodes(PostalCodeComboBox);
-            initializer.initCities(CitiesComboBox);
         }
 
         private void PasswordBox_TextChanged(object sender, EventArgs e)
@@ -70,8 +69,13 @@ namespace BookstoreLibrary.GUI
 
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
         {
-            Initializer initializer = new Initializer();
             
+        }
+
+        private void PostalCodeComboBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            Initializer initializer = new Initializer();
+            initializer.initCities(CitiesComboBox, PostalCodeComboBox.Text);
         }
     }
 }

@@ -353,6 +353,7 @@
             this.PostalCodeComboBox.Name = "PostalCodeComboBox";
             this.PostalCodeComboBox.Size = new System.Drawing.Size(184, 21);
             this.PostalCodeComboBox.TabIndex = 28;
+            this.PostalCodeComboBox.SelectedValueChanged += new System.EventHandler(this.PostalCodeComboBox_SelectedValueChanged);
             // 
             // CitiesComboBox
             // 
@@ -439,7 +440,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(457, 640);
+            this.ClientSize = new System.Drawing.Size(305, 427);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.ContactLabel);
             this.Controls.Add(this.label13);
