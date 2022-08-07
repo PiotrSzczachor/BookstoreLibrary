@@ -14,5 +14,6 @@ namespace BookstoreLibrary.Entities
         public string Name { get; set; }
         public Boolean IsAdmin { get; set; }
         public Boolean IsUser { get; set; }
+        public Boolean IsSeller { get; set; }
     }
 }

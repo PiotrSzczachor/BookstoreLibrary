@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using BookstoreLibrary.Entities;
 
 namespace BookstoreLibrary.Logic
 {
@@ -59,6 +60,7 @@ namespace BookstoreLibrary.Logic
 
         public void initCities(ComboBox CitiesComboBox, string postalCode)
         {
+            CitiesComboBox.Items.Clear();
             string url = "http://kodpocztowy.intami.pl/api/" + postalCode;
             var request = WebRequest.Create(url);
             request.Method = "GET";
@@ -81,6 +83,21 @@ namespace BookstoreLibrary.Logic
                 CitiesComboBox.Items.Add(city);
             }
             Console.WriteLine("Test");
+        }
+
+        public void initRolesIfDbIsEmpty()
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                if (db.Roles.Count() == 0)
+                {
+                    Role admin = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
+                    Role user = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
+                    Role seller = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
+                }
+                
+            }
+                
         }
     }
 }

@@ -16,10 +16,11 @@ namespace BookstoreLibrary.GUI
 {
     public partial class SignUpForm : Form
     {
-        private bool isPasswordValid = false;
+        private bool isPasswordValid;
         public SignUpForm()
         {
             InitializeComponent();
+            isPasswordValid = false;
             Initializer initializer = new Initializer();
             initializer.initPhoneCodesComboBox(PhoneCodesComboBox);
             initializer.initPostalCodes(PostalCodeComboBox);
@@ -40,10 +41,9 @@ namespace BookstoreLibrary.GUI
         private void SignUpButton_Click(object sender, EventArgs e)
         {
             SignUpLogic signUpLogic = new SignUpLogic();
-            //signUpLogic.signUp();
-            Email email = new Email();
-            string body = "Hello " + NameBox.Text + "!\nYour account in out Bookstore&Library is now active. You can now login using your username: " + UsernameBox.Text;
-            email.sendEmail(EmailBox.Text, body, "Bookstore&Library confirmation email");
+            string phoneNumber = PhoneCodesComboBox.Text + PhoneBox.Text;
+            signUpLogic.signUp(NameBox.Text, SurnameBox.Text, EmailBox.Text, PhoneBox.Text, UsernameBox.Text, PasswordBox.Text, RepeatPasswordBox.Text,
+                               isPasswordValid, StreetComboBox.Text, NumberTextBox.Text, CitiesComboBox.Text, PostalCodeComboBox.Text);
         }
 
         private void PhoneBox_KeyPress(object sender, KeyPressEventArgs e)

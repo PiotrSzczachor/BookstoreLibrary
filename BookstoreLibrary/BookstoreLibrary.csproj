@@ -81,9 +81,15 @@
     <Compile Include="GUI\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\Encoder.cs" />
     <Compile Include="Logic\Initializer.cs" />
     <Compile Include="Logic\PasswordValidator.cs" />
     <Compile Include="Logic\SignUpLogic.cs" />
+    <Compile Include="Migrations\202208071746442_InitialMigration.cs" />
+    <Compile Include="Migrations\202208071746442_InitialMigration.designer.cs">
+      <DependentUpon>202208071746442_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\LoginForm.resx">
@@ -91,6 +97,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202208071746442_InitialMigration.resx">
+      <DependentUpon>202208071746442_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

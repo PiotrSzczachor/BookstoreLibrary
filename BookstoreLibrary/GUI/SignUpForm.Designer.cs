@@ -61,8 +61,8 @@
             this.CitiesComboBox = new System.Windows.Forms.ComboBox();
             this.CityComboBox = new System.Windows.Forms.Label();
             this.StreetLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.StreetComboBox = new System.Windows.Forms.ComboBox();
+            this.NumberTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.ContactLabel = new System.Windows.Forms.Label();
@@ -348,6 +348,7 @@
             // 
             // PostalCodeComboBox
             // 
+            this.PostalCodeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PostalCodeComboBox.FormattingEnabled = true;
             this.PostalCodeComboBox.Location = new System.Drawing.Point(109, 135);
             this.PostalCodeComboBox.Name = "PostalCodeComboBox";
@@ -357,6 +358,7 @@
             // 
             // CitiesComboBox
             // 
+            this.CitiesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CitiesComboBox.FormattingEnabled = true;
             this.CitiesComboBox.Location = new System.Drawing.Point(109, 157);
             this.CitiesComboBox.Name = "CitiesComboBox";
@@ -382,20 +384,20 @@
             this.StreetLabel.TabIndex = 31;
             this.StreetLabel.Text = "Street:";
             // 
-            // comboBox1
+            // StreetComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(109, 179);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(184, 21);
-            this.comboBox1.TabIndex = 32;
+            this.StreetComboBox.FormattingEnabled = true;
+            this.StreetComboBox.Location = new System.Drawing.Point(109, 179);
+            this.StreetComboBox.Name = "StreetComboBox";
+            this.StreetComboBox.Size = new System.Drawing.Size(184, 21);
+            this.StreetComboBox.TabIndex = 32;
             // 
-            // textBox1
+            // NumberTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 202);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(184, 20);
-            this.textBox1.TabIndex = 33;
+            this.NumberTextBox.Location = new System.Drawing.Point(109, 202);
+            this.NumberTextBox.Name = "NumberTextBox";
+            this.NumberTextBox.Size = new System.Drawing.Size(184, 20);
+            this.NumberTextBox.TabIndex = 33;
             // 
             // label12
             // 
@@ -445,8 +447,8 @@
             this.Controls.Add(this.ContactLabel);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.NumberTextBox);
+            this.Controls.Add(this.StreetComboBox);
             this.Controls.Add(this.StreetLabel);
             this.Controls.Add(this.CityComboBox);
             this.Controls.Add(this.CitiesComboBox);
@@ -526,8 +528,8 @@
         private System.Windows.Forms.ComboBox PostalCodeComboBox;
         private System.Windows.Forms.Label CityComboBox;
         private System.Windows.Forms.Label StreetLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox StreetComboBox;
+        private System.Windows.Forms.TextBox NumberTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label ContactLabel;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookstoreLibrary.GUI;
+using BookstoreLibrary.Logic;
 
 namespace BookstoreLibrary
 {
@@ -16,6 +17,8 @@ namespace BookstoreLibrary
         public LoginForm()
         {
             InitializeComponent();
+            Initializer initializer = new Initializer();
+            initializer.initRolesIfDbIsEmpty();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
