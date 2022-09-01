@@ -82,7 +82,6 @@ namespace BookstoreLibrary.Logic
             {
                 CitiesComboBox.Items.Add(city);
             }
-            Console.WriteLine("Test");
         }
 
         public void initRolesIfDbIsEmpty()
@@ -94,6 +93,10 @@ namespace BookstoreLibrary.Logic
                     Role admin = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
                     Role user = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
                     Role seller = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
+                    db.Roles.Add(admin);
+                    db.Roles.Add(user);
+                    db.Roles.Add(seller);
+                    db.SaveChanges();
                 }
                 
             }

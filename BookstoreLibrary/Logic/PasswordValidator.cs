@@ -20,7 +20,7 @@ namespace BookstoreLibrary.Logic
             {
                 icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\cancel.png");
             }
-            return password.Length>8;
+            return password.Length>=8;
         }
 
         public bool checkIfPasswordContainsSpecialChar(string password, PictureBox icon)
@@ -33,7 +33,7 @@ namespace BookstoreLibrary.Logic
             {
                 icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\cancel.png");
             }
-            return !password.Any(ch => !Char.IsLetterOrDigit(ch));
+            return password.Any(ch => !Char.IsLetterOrDigit(ch));
         }
 
         public bool checkIfPasswordContainsCapitalLetter(string password, PictureBox icon)
@@ -66,7 +66,8 @@ namespace BookstoreLibrary.Logic
             bool specialChar = checkIfPasswordContainsSpecialChar(password, SpecialIcon);
             bool containsCapitalLetter = checkIfPasswordContainsCapitalLetter(password, CapitalIcon);
             bool passwordsMatch = checkIfPasswordsMatch(password, rePassword, MatchIcon);
-            return minLen && specialChar && containsCapitalLetter && passwordsMatch;
+            bool result = minLen && specialChar && containsCapitalLetter && passwordsMatch;
+            return result;
         }
     }
 }

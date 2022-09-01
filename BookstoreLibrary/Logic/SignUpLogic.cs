@@ -56,10 +56,10 @@ namespace BookstoreLibrary.Logic
                     {
                         addNewUser(name, surname, email, phone, username, password, street, number, city, postalCode);
                         Email emailSender = new Email();
-                        string body = "Hello " + name + "!\nYour account in out Bookstore&Library is now active. You can now login using your username: " + username;
+                        string body = "Hello " + name + "!\nYour account in our Bookstore&Library is now active. You can now login using your username: " + username;
                         emailSender.sendEmail(email, body, "Bookstore&Library confirmation email");
-                        MessageBox.Show("Success",
-                                        "Your account was created successfully. We send confirmation at your email.",
+                        MessageBox.Show("Your account was created successfully. We send confirmation at your email.", 
+                                        "Success",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
                     }
