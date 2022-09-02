@@ -23,7 +23,7 @@ namespace BookstoreLibrary.Logic
             }
             return true;
         }
-        private bool checkIfEmailIsValid(string source)
+        public bool checkIfEmailIsValid(string source)
         {
             return new EmailAddressAttribute().IsValid(source);
         }
@@ -44,6 +44,30 @@ namespace BookstoreLibrary.Logic
             }
         }
 
+        private bool isUserExists(string username, string email)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                User user = db.Users.FirstOrDefault(u => u.Username == username);
+                if (user == null)
+                {
+                    User userByEmail = db.Users.FirstOrDefault(u => u.Email == email);
+                    if (userByEmail == null)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                } 
+                else
+                {
+                    return true;
+                }
+            }
+        }
+
 
         public void signUp(string name, string surname, string email, string phone, string username, string password, string repeatedPassword, bool isPasswordValid, string street, string number, string city, string postalCode)
         {
@@ -54,14 +78,24 @@ namespace BookstoreLibrary.Logic
                 {
                     if (isPasswordValid)
                     {
-                        addNewUser(name, surname, email, phone, username, password, street, number, city, postalCode);
-                        Email emailSender = new Email();
-                        string body = "Hello " + name + "!\nYour account in our Bookstore&Library is now active. You can now login using your username: " + username;
-                        emailSender.sendEmail(email, body, "Bookstore&Library confirmation email");
-                        MessageBox.Show("Your account was created successfully. We send confirmation at your email.", 
-                                        "Success",
-                                        MessageBoxButtons.OK,
-                                        MessageBoxIcon.Information);
+                        if (!isUserExists(username, email))
+                        {
+                            addNewUser(name, surname, email, phone, username, password, street, number, city, postalCode);
+                            Email emailSender = new Email();
+                            string body = "Hello " + name + "!\nYour account in our Bookstore&Library is now active. You can now login using your username: " + username;
+                            emailSender.sendEmail(email, body, "Bookstore&Library confirmation email");
+                            MessageBox.Show("Your account was created successfully. We send confirmation at your email.", 
+                                            "Success",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
+                        } else
+                        {
+                            MessageBox.Show("Username or email was already used",
+                               "Username or email are not avaliable",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
+                        }
+                        
                     }
                     else
                     {

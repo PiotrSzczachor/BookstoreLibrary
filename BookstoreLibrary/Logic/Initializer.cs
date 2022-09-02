@@ -91,8 +91,8 @@ namespace BookstoreLibrary.Logic
                 if (db.Roles.Count() == 0)
                 {
                     Role admin = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
-                    Role user = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
-                    Role seller = new Role { Name = "Admin", IsAdmin = true, IsUser = false, IsSeller = false };
+                    Role user = new Role { Name = "User", IsAdmin = false, IsUser = true, IsSeller = false };
+                    Role seller = new Role { Name = "Seller", IsAdmin = false, IsUser = false, IsSeller = true };
                     db.Roles.Add(admin);
                     db.Roles.Add(user);
                     db.Roles.Add(seller);
@@ -101,6 +101,11 @@ namespace BookstoreLibrary.Logic
                 
             }
                 
+        }
+
+        public void initInfoLabel(Label label, string username)
+        {
+            label.Text = "You are currently logged as " + username;
         }
     }
 }

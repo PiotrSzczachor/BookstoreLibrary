@@ -69,11 +69,11 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\SoldBook.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="GUI\AdminPanel.cs">
+    <Compile Include="GUI\AdminPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\AdminPanel.Designer.cs">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
+    <Compile Include="GUI\AdminPanelForm.Designer.cs">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -81,14 +81,27 @@
     <Compile Include="GUI\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\SellerPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SellerPanelForm.Designer.cs">
+      <DependentUpon>SellerPanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\SignUpForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserPanelForm.Designer.cs">
+      <DependentUpon>UserPanelForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\Encoder.cs" />
     <Compile Include="Logic\Initializer.cs" />
+    <Compile Include="Logic\LogInLogic.cs" />
     <Compile Include="Logic\PasswordValidator.cs" />
     <Compile Include="Logic\SignUpLogic.cs" />
     <Compile Include="Migrations\202208071746442_InitialMigration.cs" />
@@ -98,8 +111,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GUI\AdminPanel.resx">
-      <DependentUpon>AdminPanel.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\AdminPanelForm.resx">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -153,9 +166,7 @@
       <Name>EmailSender</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

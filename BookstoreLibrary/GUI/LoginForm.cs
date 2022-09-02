@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookstoreLibrary.GUI;
 using BookstoreLibrary.Logic;
+using BookstoreLibrary.Entities;
 
 namespace BookstoreLibrary
 {
     public partial class LoginForm : Form
     {
+        User currentlyLoggedUser;
         public LoginForm()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace BookstoreLibrary
             initializer.initRolesIfDbIsEmpty();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void ShowPasswordPictureBox_Click(object sender, EventArgs e)
         {
             if (PasswordBox.UseSystemPasswordChar)
             {
@@ -39,6 +41,12 @@ namespace BookstoreLibrary
             this.Hide();
             new SignUpForm().ShowDialog();
             this.Close();
+        }
+
+        private void LoginButton_Click(object sender, EventArgs e)
+        {
+            LogInLogic logInLogic = new LogInLogic();
+            logInLogic.logIn(UsernameBox.Text, PasswordBox.Text, this);
         }
     }
 }

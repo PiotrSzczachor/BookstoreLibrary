@@ -303,6 +303,7 @@
             this.GoBackButton.TabIndex = 23;
             this.GoBackButton.Text = "Go back";
             this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
             // SignUpButton
             // 

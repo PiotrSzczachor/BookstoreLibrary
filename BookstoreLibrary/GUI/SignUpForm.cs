@@ -77,5 +77,12 @@ namespace BookstoreLibrary.GUI
             Initializer initializer = new Initializer();
             initializer.initCities(CitiesComboBox, PostalCodeComboBox.Text);
         }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LoginForm().ShowDialog();
+            this.Close();
+        }
     }
 }

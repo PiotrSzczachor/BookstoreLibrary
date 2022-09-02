@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookstoreLibrary.Entities;
 
 namespace BookstoreLibrary.GUI
 {
-    public partial class AdminPanel : Form
+    public partial class SellerPanelForm : Form
     {
-        public AdminPanel()
+        User currentlyLoggedUser;
+        public SellerPanelForm(User user)
         {
             InitializeComponent();
+            currentlyLoggedUser = user;
         }
     }
 }
