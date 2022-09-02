@@ -107,5 +107,15 @@ namespace BookstoreLibrary.Logic
         {
             label.Text = "You are currently logged as " + username;
         }
+
+        public void initBooksPanel(DataGridView booksTable, Label label)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                var books = db.Books.ToList();
+                booksTable.DataSource = books;
+                label.Text = "All books:";
+            }
+        }
     }
 }

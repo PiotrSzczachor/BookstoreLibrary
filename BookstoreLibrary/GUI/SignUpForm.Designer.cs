@@ -103,7 +103,7 @@
             this.PhoneBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneBox.Name = "PhoneBox";
             this.PhoneBox.Size = new System.Drawing.Size(126, 20);
-            this.PhoneBox.TabIndex = 3;
+            this.PhoneBox.TabIndex = 4;
             this.PhoneBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneBox_KeyPress);
             // 
             // UsernameBox
@@ -112,7 +112,7 @@
             this.UsernameBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(184, 20);
-            this.UsernameBox.TabIndex = 4;
+            this.UsernameBox.TabIndex = 9;
             // 
             // PasswordBox
             // 
@@ -120,7 +120,7 @@
             this.PasswordBox.Margin = new System.Windows.Forms.Padding(2);
             this.PasswordBox.Name = "PasswordBox";
             this.PasswordBox.Size = new System.Drawing.Size(184, 20);
-            this.PasswordBox.TabIndex = 5;
+            this.PasswordBox.TabIndex = 10;
             this.PasswordBox.TextChanged += new System.EventHandler(this.PasswordBox_TextChanged);
             // 
             // label1
@@ -279,7 +279,7 @@
             this.RepeatPasswordBox.Margin = new System.Windows.Forms.Padding(2);
             this.RepeatPasswordBox.Name = "RepeatPasswordBox";
             this.RepeatPasswordBox.Size = new System.Drawing.Size(184, 20);
-            this.RepeatPasswordBox.TabIndex = 20;
+            this.RepeatPasswordBox.TabIndex = 11;
             this.RepeatPasswordBox.TextChanged += new System.EventHandler(this.RepeatPasswordBox_TextChanged);
             // 
             // TermsCheckBox
@@ -289,7 +289,7 @@
             this.TermsCheckBox.Margin = new System.Windows.Forms.Padding(2);
             this.TermsCheckBox.Name = "TermsCheckBox";
             this.TermsCheckBox.Size = new System.Drawing.Size(109, 17);
-            this.TermsCheckBox.TabIndex = 22;
+            this.TermsCheckBox.TabIndex = 12;
             this.TermsCheckBox.Text = "I accept the shop";
             this.TermsCheckBox.UseVisualStyleBackColor = true;
             this.TermsCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
@@ -300,7 +300,7 @@
             this.GoBackButton.Margin = new System.Windows.Forms.Padding(2);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(106, 29);
-            this.GoBackButton.TabIndex = 23;
+            this.GoBackButton.TabIndex = 13;
             this.GoBackButton.Text = "Go back";
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
@@ -312,7 +312,7 @@
             this.SignUpButton.Margin = new System.Windows.Forms.Padding(2);
             this.SignUpButton.Name = "SignUpButton";
             this.SignUpButton.Size = new System.Drawing.Size(106, 29);
-            this.SignUpButton.TabIndex = 24;
+            this.SignUpButton.TabIndex = 14;
             this.SignUpButton.Text = "Sign up";
             this.SignUpButton.UseVisualStyleBackColor = true;
             this.SignUpButton.Click += new System.EventHandler(this.SignUpButton_Click);
@@ -325,7 +325,7 @@
             this.PhoneCodesComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneCodesComboBox.Name = "PhoneCodesComboBox";
             this.PhoneCodesComboBox.Size = new System.Drawing.Size(55, 21);
-            this.PhoneCodesComboBox.TabIndex = 25;
+            this.PhoneCodesComboBox.TabIndex = 3;
             // 
             // termsLinkLabel
             // 
@@ -354,7 +354,7 @@
             this.PostalCodeComboBox.Location = new System.Drawing.Point(109, 135);
             this.PostalCodeComboBox.Name = "PostalCodeComboBox";
             this.PostalCodeComboBox.Size = new System.Drawing.Size(184, 21);
-            this.PostalCodeComboBox.TabIndex = 28;
+            this.PostalCodeComboBox.TabIndex = 5;
             this.PostalCodeComboBox.SelectedValueChanged += new System.EventHandler(this.PostalCodeComboBox_SelectedValueChanged);
             // 
             // CitiesComboBox
@@ -364,7 +364,7 @@
             this.CitiesComboBox.Location = new System.Drawing.Point(109, 157);
             this.CitiesComboBox.Name = "CitiesComboBox";
             this.CitiesComboBox.Size = new System.Drawing.Size(184, 21);
-            this.CitiesComboBox.TabIndex = 29;
+            this.CitiesComboBox.TabIndex = 6;
             this.CitiesComboBox.SelectedValueChanged += new System.EventHandler(this.comboBox2_SelectedValueChanged);
             // 
             // CityComboBox
@@ -391,14 +391,14 @@
             this.StreetComboBox.Location = new System.Drawing.Point(109, 179);
             this.StreetComboBox.Name = "StreetComboBox";
             this.StreetComboBox.Size = new System.Drawing.Size(184, 21);
-            this.StreetComboBox.TabIndex = 32;
+            this.StreetComboBox.TabIndex = 7;
             // 
             // NumberTextBox
             // 
             this.NumberTextBox.Location = new System.Drawing.Point(109, 202);
             this.NumberTextBox.Name = "NumberTextBox";
             this.NumberTextBox.Size = new System.Drawing.Size(184, 20);
-            this.NumberTextBox.TabIndex = 33;
+            this.NumberTextBox.TabIndex = 8;
             // 
             // label12
             // 

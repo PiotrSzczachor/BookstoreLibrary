@@ -44,6 +44,7 @@
             this.BooksButton.TabIndex = 0;
             this.BooksButton.Text = "Books";
             this.BooksButton.UseVisualStyleBackColor = true;
+            this.BooksButton.Click += new System.EventHandler(this.BooksButton_Click);
             // 
             // UsersButton
             // 

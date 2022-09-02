@@ -29,5 +29,12 @@ namespace BookstoreLibrary.GUI
             new LoginForm().ShowDialog();
             this.Close();
         }
+
+        private void BooksButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new BooksPanel(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }
