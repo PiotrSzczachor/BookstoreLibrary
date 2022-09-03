@@ -1,6 +1,6 @@
 ﻿namespace BookstoreLibrary.GUI
 {
-    partial class BooksPanel
+    partial class BooksPanelForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,11 @@
             this.allBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToSellToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToBorrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.borrowedBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soldBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BooksTypeLabel = new System.Windows.Forms.Label();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.SaveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BooksTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -74,7 +78,9 @@
             this.filtersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.allBooksToolStripMenuItem,
             this.booksToSellToolStripMenuItem,
-            this.booksToBorrowToolStripMenuItem});
+            this.booksToBorrowToolStripMenuItem,
+            this.borrowedBooksToolStripMenuItem,
+            this.soldBooksToolStripMenuItem});
             this.filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
             this.filtersToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.filtersToolStripMenuItem.Text = "Filters";
@@ -100,6 +106,20 @@
             this.booksToBorrowToolStripMenuItem.Text = "Books to borrow";
             this.booksToBorrowToolStripMenuItem.Click += new System.EventHandler(this.booksToBorrowToolStripMenuItem_Click);
             // 
+            // borrowedBooksToolStripMenuItem
+            // 
+            this.borrowedBooksToolStripMenuItem.Name = "borrowedBooksToolStripMenuItem";
+            this.borrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowedBooksToolStripMenuItem.Text = "Borrowed books";
+            this.borrowedBooksToolStripMenuItem.Click += new System.EventHandler(this.borrowedBooksToolStripMenuItem_Click);
+            // 
+            // soldBooksToolStripMenuItem
+            // 
+            this.soldBooksToolStripMenuItem.Name = "soldBooksToolStripMenuItem";
+            this.soldBooksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.soldBooksToolStripMenuItem.Text = "Sold books";
+            this.soldBooksToolStripMenuItem.Click += new System.EventHandler(this.soldBooksToolStripMenuItem_Click);
+            // 
             // BooksTypeLabel
             // 
             this.BooksTypeLabel.AutoSize = true;
@@ -110,17 +130,37 @@
             this.BooksTypeLabel.TabIndex = 3;
             this.BooksTypeLabel.Text = "label1";
             // 
-            // BooksPanel
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(289, 399);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(100, 39);
+            this.DeleteButton.TabIndex = 4;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            // 
+            // SaveButton
+            // 
+            this.SaveButton.Location = new System.Drawing.Point(395, 399);
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.Size = new System.Drawing.Size(100, 39);
+            this.SaveButton.TabIndex = 5;
+            this.SaveButton.Text = "Save";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            // 
+            // BooksPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 450);
+            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.BooksTypeLabel);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.BooksTable);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "BooksPanel";
+            this.Name = "BooksPanelForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BooksPanel";
             ((System.ComponentModel.ISupportInitialize)(this.BooksTable)).EndInit();
@@ -141,5 +181,9 @@
         private System.Windows.Forms.ToolStripMenuItem booksToSellToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem booksToBorrowToolStripMenuItem;
         private System.Windows.Forms.Label BooksTypeLabel;
+        private System.Windows.Forms.ToolStripMenuItem borrowedBooksToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soldBooksToolStripMenuItem;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button SaveButton;
     }
 }

@@ -14,8 +14,7 @@ namespace BookstoreLibrary.Logic
         {
             using (var db = new BookstoreLibContext())
             {
-                var booksToBorrow = db.BooksToBorrow.Select(b => new { Id = b.Id, Title = b.Book.Title, Quantity = b.Quantity}).ToList();
-                booksTable.DataSource = booksToBorrow;
+                booksTable.DataSource = db.BooksToBorrow.Select(b => new { Id = b.Id, Title = b.Book.Title, Quantity = b.Quantity}).ToList();
                 label.Text = "Books to borrow:";
             }
         }
@@ -24,9 +23,27 @@ namespace BookstoreLibrary.Logic
         {
             using (var db = new BookstoreLibContext())
             {
-                var booksToBorrow = db.BooksToSell.Select(b => new { Id = b.Id, Title = b.Book.Title, Price = b.Price, Currency = b.Currency, Quantity = b.Quantity}).ToList();
-                booksTable.DataSource = booksToBorrow;
+                booksTable.DataSource = db.BooksToSell.Select(b => new { Id = b.Id, Title = b.Book.Title, Price = b.Price, Currency = b.Currency, Quantity = b.Quantity}).ToList();
                 label.Text = "Books to sell:";
+            }
+        }
+
+        public void fillTableWithBorrowedBooks(DataGridView booksTable, Label label)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                booksTable.DataSource = db.BorrowedBooks.Select(b => new { Id = b.Id, Title = b.Book.Book.Title, BorrowedBy = b.BorrowedBy.Username, BorrowedDate = b.BorrowedDate, DeadlineDate = b.DeadlineDate }).ToList();
+                label.Text = "Borrowed books:";
+            }
+
+        }
+
+        public void fillTableWithSoldBooks(DataGridView booksTable, Label label)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                booksTable.DataSource = db.SoldBooks.Select(b => new { Id = b.Id, Title = b.Book.Book.Title, Buyer = b.Buyer.Username, SoldDate = b.SoldDate, IsShipped = b.isShipped }).ToList();
+                label.Text = "Sold books";
             }
         }
     }

@@ -21,6 +21,7 @@ namespace BookstoreLibrary.GUI
             currentlyLoggedUser = user;
             Initializer initializer = new Initializer();
             initializer.initInfoLabel(InfoLabel, user.Username);
+            InfoLabel.Left = (this.Width - InfoLabel.Width) / 2;
         }
 
         private void LogOutButton_Click(object sender, EventArgs e)
@@ -33,7 +34,14 @@ namespace BookstoreLibrary.GUI
         private void BooksButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new BooksPanel(currentlyLoggedUser).ShowDialog();
+            new BooksPanelForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
+
+        private void UsersButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UsersManagementForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
     }

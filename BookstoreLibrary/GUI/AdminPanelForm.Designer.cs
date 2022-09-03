@@ -54,6 +54,7 @@
             this.UsersButton.TabIndex = 1;
             this.UsersButton.Text = "Users";
             this.UsersButton.UseVisualStyleBackColor = true;
+            this.UsersButton.Click += new System.EventHandler(this.UsersButton_Click);
             // 
             // StoresButton
             // 

@@ -75,11 +75,11 @@
     <Compile Include="GUI\AdminPanelForm.Designer.cs">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\BooksPanel.cs">
+    <Compile Include="GUI\BooksPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\BooksPanel.Designer.cs">
-      <DependentUpon>BooksPanel.cs</DependentUpon>
+    <Compile Include="GUI\BooksPanelForm.Designer.cs">
+      <DependentUpon>BooksPanelForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\LoginForm.cs">
       <SubType>Form</SubType>
@@ -105,12 +105,19 @@
     <Compile Include="GUI\UserPanelForm.Designer.cs">
       <DependentUpon>UserPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UsersManagementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UsersManagementForm.Designer.cs">
+      <DependentUpon>UsersManagementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logic\BooksPanelLogic.cs" />
     <Compile Include="Logic\Encoder.cs" />
     <Compile Include="Logic\Initializer.cs" />
     <Compile Include="Logic\LogInLogic.cs" />
     <Compile Include="Logic\PasswordValidator.cs" />
     <Compile Include="Logic\SignUpLogic.cs" />
+    <Compile Include="Logic\UsersManager.cs" />
     <Compile Include="Migrations\202208071746442_InitialMigration.cs" />
     <Compile Include="Migrations\202208071746442_InitialMigration.designer.cs">
       <DependentUpon>202208071746442_InitialMigration.cs</DependentUpon>
@@ -121,8 +128,8 @@
     <EmbeddedResource Include="GUI\AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\BooksPanel.resx">
-      <DependentUpon>BooksPanel.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\BooksPanelForm.resx">
+      <DependentUpon>BooksPanelForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -135,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserPanelForm.resx">
       <DependentUpon>UserPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UsersManagementForm.resx">
+      <DependentUpon>UsersManagementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202208071746442_InitialMigration.resx">
       <DependentUpon>202208071746442_InitialMigration.cs</DependentUpon>

@@ -117,5 +117,25 @@ namespace BookstoreLibrary.Logic
                 label.Text = "All books:";
             }
         }
+
+        public void initUsersTable(DataGridView usersTable, Label label)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                usersTable.DataSource = db.Users.Select(u => new
+                {
+                    Id = u.Id,
+                    Name = u.Name,
+                    Surname = u.Surname,
+                    Username = u.Username,
+                    Email = u.Email,
+                    PhoneNumber = u.PhoneNumber,
+                    JoinDate = u.JoinDate,
+                    AccountBalance = u.AccountBalance,
+                    Role = u.Role.Name
+                }).ToList();
+            }
+            label.Text = "All users:";
+        }
     }
 }
