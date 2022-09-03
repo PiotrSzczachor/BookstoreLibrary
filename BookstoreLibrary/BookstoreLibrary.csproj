@@ -69,6 +69,12 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\SoldBook.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="GUI\AddressInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddressInfoForm.Designer.cs">
+      <DependentUpon>AddressInfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\AdminPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddressInfoForm.resx">
+      <DependentUpon>AddressInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AdminPanelForm.resx">
       <DependentUpon>AdminPanelForm.cs</DependentUpon>
     </EmbeddedResource>

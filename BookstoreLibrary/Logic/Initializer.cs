@@ -137,5 +137,13 @@ namespace BookstoreLibrary.Logic
             }
             label.Text = "All users:";
         }
+
+        public void initAddressInfo(TextBox StreetBox, TextBox NumberBox, TextBox CityBox, TextBox PostalCodeBox, User user)
+        {
+            StreetBox.Text = user.Address.Street;
+            NumberBox.Text = user.Address.Number;
+            CityBox.Text = user.Address.City;
+            PostalCodeBox.Text = user.Address.PostalCode;
+        }
     }
 }

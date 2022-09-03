@@ -21,6 +21,34 @@ namespace BookstoreLibrary.GUI
             currentlyLoggedUser = user;
             Initializer initializer = new Initializer();
             initializer.initUsersTable(UsersTable, UsersTypeLabel);
+            UsersTypeLabel.Left = (this.Width - UsersTypeLabel.Width) / 2;
+        }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AdminPanelForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
+
+        private void ShowAddressButton_Click(object sender, EventArgs e)
+        {
+            if (UsersTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = UsersTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = UsersTable.Rows[selectedrowindex];
+                string username = Convert.ToString(selectedRow.Cells["Username"].Value);
+                using (var db = new BookstoreLibContext())
+                {
+                    User user = db.Users.FirstOrDefault(u => u.Username == username);
+                    if (user != null)
+                    {
+                        this.Hide();
+                        new AddressInfoForm(currentlyLoggedUser, user).ShowDialog();
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }

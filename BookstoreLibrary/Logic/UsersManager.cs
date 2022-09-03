@@ -10,6 +10,9 @@ namespace BookstoreLibrary.Logic
 {
     public class UsersManager
     {
-        
+        public void editAdress(User user)
+        {
+
+        }
     }
 }
