@@ -39,7 +39,8 @@
             this.soldBooksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BooksTypeLabel = new System.Windows.Forms.Label();
             this.DeleteButton = new System.Windows.Forms.Button();
-            this.SaveButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.BooksTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -132,28 +133,38 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(289, 399);
+            this.DeleteButton.Location = new System.Drawing.Point(447, 399);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(100, 39);
             this.DeleteButton.TabIndex = 4;
-            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.Text = "Delete book";
             this.DeleteButton.UseVisualStyleBackColor = true;
             // 
-            // SaveButton
+            // AddButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(395, 399);
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(100, 39);
-            this.SaveButton.TabIndex = 5;
-            this.SaveButton.Text = "Save";
-            this.SaveButton.UseVisualStyleBackColor = true;
+            this.AddButton.Location = new System.Drawing.Point(235, 399);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(100, 39);
+            this.AddButton.TabIndex = 5;
+            this.AddButton.Text = "Add Book";
+            this.AddButton.UseVisualStyleBackColor = true;
+            // 
+            // EditButton
+            // 
+            this.EditButton.Location = new System.Drawing.Point(341, 399);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(100, 39);
+            this.EditButton.TabIndex = 6;
+            this.EditButton.Text = "Edit book";
+            this.EditButton.UseVisualStyleBackColor = true;
             // 
             // BooksPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 450);
-            this.Controls.Add(this.SaveButton);
+            this.Controls.Add(this.EditButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.BooksTypeLabel);
             this.Controls.Add(this.GoBackButton);
@@ -184,6 +195,7 @@
         private System.Windows.Forms.ToolStripMenuItem borrowedBooksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem soldBooksToolStripMenuItem;
         private System.Windows.Forms.Button DeleteButton;
-        private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Button EditButton;
     }
 }

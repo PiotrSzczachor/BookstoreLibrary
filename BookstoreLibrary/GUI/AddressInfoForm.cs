@@ -73,7 +73,15 @@ namespace BookstoreLibrary.GUI
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
+            UsersManager usersManager = new UsersManager();
+            bool wasEdited = usersManager.editAdress(userToCheck, StreetBox.Text, NumberTextBox.Text, CityBox.Text, PostalCodeBox.Text);
+            if (wasEdited)
+            {
+                initStreet = StreetBox.Text;
+                initCity = CityBox.Text;
+                initNumber = NumberTextBox.Text;
+                initPostalCode = PostalCodeBox.Text;
+            }
         }
     }
 }
