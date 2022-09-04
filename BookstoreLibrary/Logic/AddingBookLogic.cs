@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookstoreLibrary.Entities;
 
 namespace BookstoreLibrary.Logic
 {
@@ -49,6 +50,43 @@ namespace BookstoreLibrary.Logic
                 throw new Exception(ex.Message);
             }
             
+        }
+
+        public void addBookToDb(string title, string author, string type, string publisher, string pubishYear, string PageNumber)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                bool emptyValue = false;
+                string[] values = { title, author, type, publisher, pubishYear, PageNumber };
+                foreach (string value in values)
+                {
+                    if (string.IsNullOrEmpty(value))
+                    {
+                        emptyValue = true;
+                    }
+                }
+                if (emptyValue)
+                {
+                    MessageBox.Show("All text boxes must be completed",
+                                        "Complete all text boxes",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                } else
+                {
+                    int year = Int32.Parse(pubishYear);
+                    int pages = Int32.Parse(PageNumber);
+                    Book book = new Book {
+                        Title = title,
+                        Author = author, 
+                        Type = type,
+                        Publisher = publisher,
+                        PublishYear = year,
+                        PageNumber = pages 
+                    };
+                    db.Books.Add(book);
+                    Console.WriteLine(book.Id.ToString());
+                }
+            }
         }
     }
 }

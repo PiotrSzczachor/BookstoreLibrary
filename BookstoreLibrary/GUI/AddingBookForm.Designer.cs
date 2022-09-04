@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TitleBox = new System.Windows.Forms.TextBox();
             this.PriceBox = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.QuantityBox = new System.Windows.Forms.TextBox();
+            this.PageNumberBox = new System.Windows.Forms.TextBox();
             this.TitleLabel = new System.Windows.Forms.Label();
             this.AuthorLabel = new System.Windows.Forms.Label();
             this.TypeLabel = new System.Windows.Forms.Label();
@@ -53,12 +53,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.CurrencyFlagPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // TitleBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(100, 9);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(152, 20);
-            this.textBox1.TabIndex = 0;
+            this.TitleBox.Location = new System.Drawing.Point(100, 9);
+            this.TitleBox.Name = "TitleBox";
+            this.TitleBox.Size = new System.Drawing.Size(152, 20);
+            this.TitleBox.TabIndex = 0;
             // 
             // PriceBox
             // 
@@ -67,20 +67,23 @@
             this.PriceBox.Name = "PriceBox";
             this.PriceBox.Size = new System.Drawing.Size(152, 20);
             this.PriceBox.TabIndex = 7;
+            this.PriceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PriceBox_KeyPress);
             // 
-            // textBox8
+            // QuantityBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(100, 165);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(152, 20);
-            this.textBox8.TabIndex = 6;
+            this.QuantityBox.Location = new System.Drawing.Point(100, 165);
+            this.QuantityBox.Name = "QuantityBox";
+            this.QuantityBox.Size = new System.Drawing.Size(152, 20);
+            this.QuantityBox.TabIndex = 6;
+            this.QuantityBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.QuantityBox_KeyPress);
             // 
-            // textBox9
+            // PageNumberBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(100, 139);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(152, 20);
-            this.textBox9.TabIndex = 5;
+            this.PageNumberBox.Location = new System.Drawing.Point(100, 139);
+            this.PageNumberBox.Name = "PageNumberBox";
+            this.PageNumberBox.Size = new System.Drawing.Size(152, 20);
+            this.PageNumberBox.TabIndex = 5;
+            this.PageNumberBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PageNumberBox_KeyPress);
             // 
             // TitleLabel
             // 
@@ -181,6 +184,7 @@
             this.PublishYearComboBox.Name = "PublishYearComboBox";
             this.PublishYearComboBox.Size = new System.Drawing.Size(152, 21);
             this.PublishYearComboBox.TabIndex = 19;
+            this.PublishYearComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PublishYearComboBox_KeyPress);
             // 
             // PublisherComboBox
             // 
@@ -235,6 +239,7 @@
             this.SaveButton.TabIndex = 25;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // CurrencyFlagPictureBox
             // 
@@ -269,9 +274,9 @@
             this.Controls.Add(this.AuthorLabel);
             this.Controls.Add(this.TitleLabel);
             this.Controls.Add(this.PriceBox);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.QuantityBox);
+            this.Controls.Add(this.PageNumberBox);
+            this.Controls.Add(this.TitleBox);
             this.Name = "AddingBookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddingBookForm";
@@ -283,10 +288,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TitleBox;
         private System.Windows.Forms.TextBox PriceBox;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox QuantityBox;
+        private System.Windows.Forms.TextBox PageNumberBox;
         private System.Windows.Forms.Label TitleLabel;
         private System.Windows.Forms.Label AuthorLabel;
         private System.Windows.Forms.Label TypeLabel;

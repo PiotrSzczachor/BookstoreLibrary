@@ -48,5 +48,54 @@ namespace BookstoreLibrary.GUI
             AddingBookLogic addingBookLogic = new AddingBookLogic();
             addingBookLogic.changeFlagPicture(CurrencyComboBox.Text, CurrencyFlagPictureBox);
         }
+
+        private void PublishYearComboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            handleOnlyDigits(e, PublishYearComboBox.Text);
+        }
+
+        private void PageNumberBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            handleOnlyDigits(e, PageNumberBox.Text);
+        }
+
+        private void QuantityBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            handleOnlyDigits(e, QuantityBox.Text);
+        }
+
+        private void PriceBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            handleOnlyFloatNumbers(e, PriceBox.Text);
+        }
+
+        private void handleOnlyFloatNumbers(KeyPressEventArgs e, string text)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            } 
+            else
+            {
+                if (e.KeyChar == ',' && (text.Count(ch => ch == ',') > 0 || text.Length == 0))
+                {
+                    e.Handled = true;
+                }
+            }
+        }
+
+        private void handleOnlyDigits(KeyPressEventArgs e, string text)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            AddingBookLogic addingBookLogic = new AddingBookLogic();
+            addingBookLogic.addBookToDb(TitleBox.Text, AuthorComboBox.Text, TypeComboBox.Text, PublisherComboBox.Text, PublishYearComboBox.Text, PageNumberBox.Text);
+        }
     }
 }
