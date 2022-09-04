@@ -19,6 +19,8 @@ namespace BookstoreLibrary.GUI
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            Initializer initializer = new Initializer();
+            initializer.initAddingBookComboBoxes(AuthorComboBox, TypeComboBox, PublisherComboBox, PublishYearComboBox, CurrencyComboBox, CurrencyFlagPictureBox);
         }
 
         private void BookForSaleCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -39,6 +41,12 @@ namespace BookstoreLibrary.GUI
             this.Hide();
             new BooksPanelForm(currentlyLoggedUser).ShowDialog();
             this.Close();
+        }
+
+        private void CurrencyComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AddingBookLogic addingBookLogic = new AddingBookLogic();
+            addingBookLogic.changeFlagPicture(CurrencyComboBox.Text, CurrencyFlagPictureBox);
         }
     }
 }

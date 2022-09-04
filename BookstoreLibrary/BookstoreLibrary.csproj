@@ -123,6 +123,7 @@
     <Compile Include="GUI\UsersManagementForm.Designer.cs">
       <DependentUpon>UsersManagementForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logic\AddingBookLogic.cs" />
     <Compile Include="Logic\BooksPanelLogic.cs" />
     <Compile Include="Logic\Encoder.cs" />
     <Compile Include="Logic\Initializer.cs" />
@@ -175,6 +176,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Data\PostalCodes.csv" />
     <None Include="packages.config" />
@@ -200,6 +202,12 @@
     <Content Include="Images\Icons\arrow_undo.png" />
     <Content Include="Images\Icons\cancel.png" />
     <Content Include="Images\Icons\email.png" />
+    <Content Include="Images\Icons\Flags\ch.png" />
+    <Content Include="Images\Icons\Flags\europeanunion.png" />
+    <Content Include="Images\Icons\Flags\gb.png" />
+    <Content Include="Images\Icons\Flags\pl.png" />
+    <Content Include="Images\Icons\Flags\ua.png" />
+    <Content Include="Images\Icons\Flags\us.png" />
     <Content Include="Images\Icons\lock.png" />
     <Content Include="Images\Icons\user.png" />
     <Content Include="Images\Show.png" />

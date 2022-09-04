@@ -8,6 +8,7 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using BookstoreLibrary.Entities;
+using System.Drawing;
 
 namespace BookstoreLibrary.Logic
 {
@@ -146,27 +147,52 @@ namespace BookstoreLibrary.Logic
             PostalCodeBox.Text = user.Address.PostalCode;
         }
 
-        public void initAddingBookComboBoxes(ComboBox AuthorBox, ComboBox TypeBox, ComboBox PublisherBox, ComboBox PublishYear, ComboBox Currency)
+        public void initAddingBookComboBoxes(ComboBox AuthorBox, ComboBox TypeBox, ComboBox PublisherBox, ComboBox PublishYearBox, ComboBox CurrencyBox, PictureBox CurrencyFlagPictureBox)
         {
             using (var db = new BookstoreLibContext())
             {
                 var authors = db.Books.Select(b => new { Author = b.Author }).ToList();
                 foreach (var author in authors)
                 {
-                    AuthorBox.Items.Add(author);
+                    AuthorBox.Items.Add(author.Author);
                 }
-                var types = db.Books.Select(b => new { Type = b.Type}).ToList();
+                var types = db.Books.Select(b => new {Type = b.Type}).ToList();
                 foreach (var type in types)
                 {
-                    TypeBox.Items.Add(type);
+                    TypeBox.Items.Add(type.Type);
                 }
                 var publishers = db.Books.Select(b => new { Publisher = b.Publisher }).ToList();
                 foreach(var publisher in publishers)
                 {
-                    PublisherBox.Items.Add(publisher);
+                    PublisherBox.Items.Add(publisher.Publisher);
                 }
-                string[] currency = { "PLN", "EUR", "USD", "CHF", "UAH"};
+                string[] currencies = { "PLN", "EUR", "USD", "CHF", "GBP", "UAH"};
+                foreach (var currency in currencies)
+                {
+                    CurrencyBox.Items.Add(currency);
+                }
+                CurrencyBox.Text = "PLN";
+                DateTime now = DateTime.Now;
+                int currentYear = now.Year;
+                for (int i=1900; i<=currentYear; i++)
+                {
+                    PublishYearBox.Items.Add(i.ToString());
+                }
             }
+            //Initialize currency flag pictureBox
+            try
+            {
+                string startupPath = Environment.CurrentDirectory;
+                startupPath = startupPath.Replace(@"\bin\Debug", "");
+                string path = Path.Combine(startupPath, @"Images\Icons\Flags\pl.png");
+                CurrencyFlagPictureBox.Image = Image.FromFile(path);
+                CurrencyFlagPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            } catch (FileNotFoundException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
     }
 }
+//C:\Users\Piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\Flags\pl.png

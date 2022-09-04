@@ -42,13 +42,15 @@
             this.QuantityLabel = new System.Windows.Forms.Label();
             this.CurrencyLabel = new System.Windows.Forms.Label();
             this.CurrencyComboBox = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.PublishYearComboBox = new System.Windows.Forms.ComboBox();
+            this.PublisherComboBox = new System.Windows.Forms.ComboBox();
+            this.TypeComboBox = new System.Windows.Forms.ComboBox();
+            this.AuthorComboBox = new System.Windows.Forms.ComboBox();
             this.BookForSaleCheckBox = new System.Windows.Forms.CheckBox();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.CurrencyFlagPictureBox = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.CurrencyFlagPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -168,40 +170,41 @@
             this.CurrencyComboBox.FormattingEnabled = true;
             this.CurrencyComboBox.Location = new System.Drawing.Point(100, 245);
             this.CurrencyComboBox.Name = "CurrencyComboBox";
-            this.CurrencyComboBox.Size = new System.Drawing.Size(152, 21);
+            this.CurrencyComboBox.Size = new System.Drawing.Size(110, 21);
             this.CurrencyComboBox.TabIndex = 18;
+            this.CurrencyComboBox.SelectedIndexChanged += new System.EventHandler(this.CurrencyComboBox_SelectedIndexChanged);
             // 
-            // comboBox2
+            // PublishYearComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(100, 113);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(152, 21);
-            this.comboBox2.TabIndex = 19;
+            this.PublishYearComboBox.FormattingEnabled = true;
+            this.PublishYearComboBox.Location = new System.Drawing.Point(100, 113);
+            this.PublishYearComboBox.Name = "PublishYearComboBox";
+            this.PublishYearComboBox.Size = new System.Drawing.Size(152, 21);
+            this.PublishYearComboBox.TabIndex = 19;
             // 
-            // comboBox3
+            // PublisherComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(100, 87);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(152, 21);
-            this.comboBox3.TabIndex = 20;
+            this.PublisherComboBox.FormattingEnabled = true;
+            this.PublisherComboBox.Location = new System.Drawing.Point(100, 87);
+            this.PublisherComboBox.Name = "PublisherComboBox";
+            this.PublisherComboBox.Size = new System.Drawing.Size(152, 21);
+            this.PublisherComboBox.TabIndex = 20;
             // 
-            // comboBox4
+            // TypeComboBox
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(100, 61);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(152, 21);
-            this.comboBox4.TabIndex = 21;
+            this.TypeComboBox.FormattingEnabled = true;
+            this.TypeComboBox.Location = new System.Drawing.Point(100, 61);
+            this.TypeComboBox.Name = "TypeComboBox";
+            this.TypeComboBox.Size = new System.Drawing.Size(152, 21);
+            this.TypeComboBox.TabIndex = 21;
             // 
-            // comboBox5
+            // AuthorComboBox
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(100, 35);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(152, 21);
-            this.comboBox5.TabIndex = 22;
+            this.AuthorComboBox.FormattingEnabled = true;
+            this.AuthorComboBox.Location = new System.Drawing.Point(100, 35);
+            this.AuthorComboBox.Name = "AuthorComboBox";
+            this.AuthorComboBox.Size = new System.Drawing.Size(152, 21);
+            this.AuthorComboBox.TabIndex = 22;
             // 
             // BookForSaleCheckBox
             // 
@@ -233,18 +236,28 @@
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             // 
+            // CurrencyFlagPictureBox
+            // 
+            this.CurrencyFlagPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CurrencyFlagPictureBox.Location = new System.Drawing.Point(216, 245);
+            this.CurrencyFlagPictureBox.Name = "CurrencyFlagPictureBox";
+            this.CurrencyFlagPictureBox.Size = new System.Drawing.Size(35, 21);
+            this.CurrencyFlagPictureBox.TabIndex = 26;
+            this.CurrencyFlagPictureBox.TabStop = false;
+            // 
             // AddingBookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(263, 304);
+            this.Controls.Add(this.CurrencyFlagPictureBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.BookForSaleCheckBox);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.AuthorComboBox);
+            this.Controls.Add(this.TypeComboBox);
+            this.Controls.Add(this.PublisherComboBox);
+            this.Controls.Add(this.PublishYearComboBox);
             this.Controls.Add(this.CurrencyComboBox);
             this.Controls.Add(this.PriceLabel);
             this.Controls.Add(this.QuantityLabel);
@@ -262,6 +275,7 @@
             this.Name = "AddingBookForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddingBookForm";
+            ((System.ComponentModel.ISupportInitialize)(this.CurrencyFlagPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,12 +297,13 @@
         private System.Windows.Forms.Label QuantityLabel;
         private System.Windows.Forms.Label CurrencyLabel;
         private System.Windows.Forms.ComboBox CurrencyComboBox;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.ComboBox PublishYearComboBox;
+        private System.Windows.Forms.ComboBox PublisherComboBox;
+        private System.Windows.Forms.ComboBox TypeComboBox;
+        private System.Windows.Forms.ComboBox AuthorComboBox;
         private System.Windows.Forms.CheckBox BookForSaleCheckBox;
         private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.Button SaveButton;
+        private System.Windows.Forms.PictureBox CurrencyFlagPictureBox;
     }
 }
