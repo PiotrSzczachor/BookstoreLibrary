@@ -64,5 +64,12 @@ namespace BookstoreLibrary.GUI
             BooksPanelLogic booksPanelLogic = new BooksPanelLogic();
             booksPanelLogic.fillTableWithSoldBooks(BooksTable, BooksTypeLabel);
         }
+
+        private void AddButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AddingBookForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }

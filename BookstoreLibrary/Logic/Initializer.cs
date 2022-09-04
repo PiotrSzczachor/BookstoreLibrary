@@ -145,5 +145,28 @@ namespace BookstoreLibrary.Logic
             CityBox.Text = user.Address.City;
             PostalCodeBox.Text = user.Address.PostalCode;
         }
+
+        public void initAddingBookComboBoxes(ComboBox AuthorBox, ComboBox TypeBox, ComboBox PublisherBox, ComboBox PublishYear, ComboBox Currency)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                var authors = db.Books.Select(b => new { Author = b.Author }).ToList();
+                foreach (var author in authors)
+                {
+                    AuthorBox.Items.Add(author);
+                }
+                var types = db.Books.Select(b => new { Type = b.Type}).ToList();
+                foreach (var type in types)
+                {
+                    TypeBox.Items.Add(type);
+                }
+                var publishers = db.Books.Select(b => new { Publisher = b.Publisher }).ToList();
+                foreach(var publisher in publishers)
+                {
+                    PublisherBox.Items.Add(publisher);
+                }
+                string[] currency = { "PLN", "EUR", "USD", "CHF", "UAH"};
+            }
+        }
     }
 }

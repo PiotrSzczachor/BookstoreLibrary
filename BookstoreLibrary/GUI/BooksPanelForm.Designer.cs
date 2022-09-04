@@ -89,35 +89,35 @@
             // allBooksToolStripMenuItem
             // 
             this.allBooksToolStripMenuItem.Name = "allBooksToolStripMenuItem";
-            this.allBooksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allBooksToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.allBooksToolStripMenuItem.Text = "All books";
             this.allBooksToolStripMenuItem.Click += new System.EventHandler(this.allBooksToolStripMenuItem_Click);
             // 
             // booksToSellToolStripMenuItem
             // 
             this.booksToSellToolStripMenuItem.Name = "booksToSellToolStripMenuItem";
-            this.booksToSellToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.booksToSellToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.booksToSellToolStripMenuItem.Text = "Books to sell";
             this.booksToSellToolStripMenuItem.Click += new System.EventHandler(this.booksToSellToolStripMenuItem_Click);
             // 
             // booksToBorrowToolStripMenuItem
             // 
             this.booksToBorrowToolStripMenuItem.Name = "booksToBorrowToolStripMenuItem";
-            this.booksToBorrowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.booksToBorrowToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.booksToBorrowToolStripMenuItem.Text = "Books to borrow";
             this.booksToBorrowToolStripMenuItem.Click += new System.EventHandler(this.booksToBorrowToolStripMenuItem_Click);
             // 
             // borrowedBooksToolStripMenuItem
             // 
             this.borrowedBooksToolStripMenuItem.Name = "borrowedBooksToolStripMenuItem";
-            this.borrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowedBooksToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.borrowedBooksToolStripMenuItem.Text = "Borrowed books";
             this.borrowedBooksToolStripMenuItem.Click += new System.EventHandler(this.borrowedBooksToolStripMenuItem_Click);
             // 
             // soldBooksToolStripMenuItem
             // 
             this.soldBooksToolStripMenuItem.Name = "soldBooksToolStripMenuItem";
-            this.soldBooksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.soldBooksToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.soldBooksToolStripMenuItem.Text = "Sold books";
             this.soldBooksToolStripMenuItem.Click += new System.EventHandler(this.soldBooksToolStripMenuItem_Click);
             // 
@@ -148,6 +148,7 @@
             this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add Book";
             this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // EditButton
             // 

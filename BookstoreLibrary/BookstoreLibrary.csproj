@@ -137,6 +137,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddingBookForm.resx">
+      <DependentUpon>AddingBookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AddressInfoForm.resx">
       <DependentUpon>AddressInfoForm.cs</DependentUpon>
     </EmbeddedResource>
