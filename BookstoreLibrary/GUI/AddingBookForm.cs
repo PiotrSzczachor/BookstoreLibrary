@@ -95,7 +95,13 @@ namespace BookstoreLibrary.GUI
         private void SaveButton_Click(object sender, EventArgs e)
         {
             AddingBookLogic addingBookLogic = new AddingBookLogic();
-            addingBookLogic.addBookToDb(TitleBox.Text, AuthorComboBox.Text, TypeComboBox.Text, PublisherComboBox.Text, PublishYearComboBox.Text, PageNumberBox.Text);
+            if (BookForSaleCheckBox.Checked)
+            {
+                addingBookLogic.addBookForSale(TitleBox.Text, AuthorComboBox.Text, TypeComboBox.Text,
+                                               PublisherComboBox.Text, PublishYearComboBox.Text, PageNumberBox.Text,
+                                               QuantityBox.Text, PriceBox.Text, CurrencyComboBox.Text);
+            }
+            
         }
     }
 }
