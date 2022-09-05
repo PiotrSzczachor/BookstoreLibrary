@@ -100,6 +100,11 @@ namespace BookstoreLibrary.GUI
                 addingBookLogic.addBookForSale(TitleBox.Text, AuthorComboBox.Text, TypeComboBox.Text,
                                                PublisherComboBox.Text, PublishYearComboBox.Text, PageNumberBox.Text,
                                                QuantityBox.Text, PriceBox.Text, CurrencyComboBox.Text);
+            } else
+            {
+                addingBookLogic.addBookToBorrow(TitleBox.Text, AuthorComboBox.Text, TypeComboBox.Text,
+                                               PublisherComboBox.Text, PublishYearComboBox.Text, PageNumberBox.Text,
+                                               QuantityBox.Text);
             }
             
         }

@@ -144,5 +144,35 @@ namespace BookstoreLibrary.Logic
                                 MessageBoxIcon.Error);
             }
         }
+
+        public void addBookToBorrow(string title, string author, string type, string publisher, string pubishYear, string PageNumber, string quantity)
+        {
+            int bookId = addBookToDb(title, author, type, publisher, pubishYear, PageNumber);
+            if (bookId != -1)
+            {
+                if (!string.IsNullOrEmpty(quantity))
+                {
+                    using (var db = new BookstoreLibContext())
+                    {
+                        int quantityInt = Int32.Parse(quantity);
+                        BookToBorrow bookToBorrow = new BookToBorrow();
+                        bookToBorrow.Quantity = quantityInt;
+                        bookToBorrow.Book = db.Books.FirstOrDefault(b => b.Id == bookId);
+                        db.BooksToBorrow.Add(bookToBorrow);
+                        db.SaveChanges();
+                        MessageBox.Show("Book added successfully",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                }
+            } else
+            {
+                MessageBox.Show("Failed to add book to database",
+                                "Fail",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+            }
+        }
     }
 }

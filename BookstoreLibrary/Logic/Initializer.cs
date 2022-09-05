@@ -154,17 +154,26 @@ namespace BookstoreLibrary.Logic
                 var authors = db.Books.Select(b => new { Author = b.Author }).ToList();
                 foreach (var author in authors)
                 {
-                    AuthorBox.Items.Add(author.Author);
+                    if (!AuthorBox.Items.Contains(author.Author))
+                    {
+                        AuthorBox.Items.Add(author.Author);
+                    }
                 }
                 var types = db.Books.Select(b => new {Type = b.Type}).ToList();
                 foreach (var type in types)
                 {
-                    TypeBox.Items.Add(type.Type);
+                    if (!TypeBox.Items.Contains(type.Type))
+                    {
+                        TypeBox.Items.Add(type.Type);
+                    }
                 }
                 var publishers = db.Books.Select(b => new { Publisher = b.Publisher }).ToList();
                 foreach(var publisher in publishers)
                 {
-                    PublisherBox.Items.Add(publisher.Publisher);
+                    if (!PublisherBox.Items.Contains(publisher.Publisher))
+                    {
+                        PublisherBox.Items.Add(publisher.Publisher);
+                    }
                 }
                 string[] currencies = { "PLN", "EUR", "USD", "CHF", "GBP", "UAH"};
                 foreach (var currency in currencies)
@@ -195,4 +204,3 @@ namespace BookstoreLibrary.Logic
         }
     }
 }
-//C:\Users\Piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\Flags\pl.png
