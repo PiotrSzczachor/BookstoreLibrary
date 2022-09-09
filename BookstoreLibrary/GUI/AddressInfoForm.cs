@@ -38,7 +38,7 @@ namespace BookstoreLibrary.GUI
         private void GoBackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AdminPanelForm(currentlyLoggedUser).ShowDialog();
+            new UsersManagementForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
 

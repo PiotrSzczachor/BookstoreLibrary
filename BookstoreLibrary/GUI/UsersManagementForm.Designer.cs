@@ -43,6 +43,7 @@
             this.UsersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.UsersTable.Location = new System.Drawing.Point(12, 65);
             this.UsersTable.Name = "UsersTable";
+            this.UsersTable.RowHeadersWidth = 62;
             this.UsersTable.Size = new System.Drawing.Size(776, 339);
             this.UsersTable.TabIndex = 0;
             // 
@@ -52,7 +53,7 @@
             this.UsersTypeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.UsersTypeLabel.Location = new System.Drawing.Point(387, 43);
             this.UsersTypeLabel.Name = "UsersTypeLabel";
-            this.UsersTypeLabel.Size = new System.Drawing.Size(52, 18);
+            this.UsersTypeLabel.Size = new System.Drawing.Size(76, 26);
             this.UsersTypeLabel.TabIndex = 1;
             this.UsersTypeLabel.Text = "label1";
             // 
@@ -73,6 +74,7 @@
             this.ShowHistoryButton.TabIndex = 3;
             this.ShowHistoryButton.Text = "Show history";
             this.ShowHistoryButton.UseVisualStyleBackColor = true;
+            this.ShowHistoryButton.Click += new System.EventHandler(this.ShowHistoryButton_Click);
             // 
             // EditButton
             // 

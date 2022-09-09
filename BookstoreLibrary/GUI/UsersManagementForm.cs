@@ -50,5 +50,19 @@ namespace BookstoreLibrary.GUI
                 }
             }
         }
+
+        private void ShowHistoryButton_Click(object sender, EventArgs e)
+        {
+            if (UsersTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = UsersTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = UsersTable.Rows[selectedrowindex];
+                string userToCheck = Convert.ToString(selectedRow.Cells["Username"].Value);
+                this.Hide();
+                new UserHistoryForm(currentlyLoggedUser, userToCheck).ShowDialog();
+                this.Close();
+            }
+            
+        }
     }
 }

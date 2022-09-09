@@ -66,7 +66,7 @@
             this.PriceBox.Location = new System.Drawing.Point(100, 219);
             this.PriceBox.Name = "PriceBox";
             this.PriceBox.Size = new System.Drawing.Size(152, 20);
-            this.PriceBox.TabIndex = 7;
+            this.PriceBox.TabIndex = 8;
             this.PriceBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PriceBox_KeyPress);
             // 
             // QuantityBox
@@ -174,7 +174,7 @@
             this.CurrencyComboBox.Location = new System.Drawing.Point(100, 245);
             this.CurrencyComboBox.Name = "CurrencyComboBox";
             this.CurrencyComboBox.Size = new System.Drawing.Size(110, 21);
-            this.CurrencyComboBox.TabIndex = 18;
+            this.CurrencyComboBox.TabIndex = 9;
             this.CurrencyComboBox.SelectedIndexChanged += new System.EventHandler(this.CurrencyComboBox_SelectedIndexChanged);
             // 
             // PublishYearComboBox
@@ -183,7 +183,7 @@
             this.PublishYearComboBox.Location = new System.Drawing.Point(100, 113);
             this.PublishYearComboBox.Name = "PublishYearComboBox";
             this.PublishYearComboBox.Size = new System.Drawing.Size(152, 21);
-            this.PublishYearComboBox.TabIndex = 19;
+            this.PublishYearComboBox.TabIndex = 4;
             this.PublishYearComboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PublishYearComboBox_KeyPress);
             // 
             // PublisherComboBox
@@ -192,7 +192,7 @@
             this.PublisherComboBox.Location = new System.Drawing.Point(100, 87);
             this.PublisherComboBox.Name = "PublisherComboBox";
             this.PublisherComboBox.Size = new System.Drawing.Size(152, 21);
-            this.PublisherComboBox.TabIndex = 20;
+            this.PublisherComboBox.TabIndex = 3;
             // 
             // TypeComboBox
             // 
@@ -200,7 +200,7 @@
             this.TypeComboBox.Location = new System.Drawing.Point(100, 61);
             this.TypeComboBox.Name = "TypeComboBox";
             this.TypeComboBox.Size = new System.Drawing.Size(152, 21);
-            this.TypeComboBox.TabIndex = 21;
+            this.TypeComboBox.TabIndex = 2;
             // 
             // AuthorComboBox
             // 
@@ -208,15 +208,15 @@
             this.AuthorComboBox.Location = new System.Drawing.Point(100, 35);
             this.AuthorComboBox.Name = "AuthorComboBox";
             this.AuthorComboBox.Size = new System.Drawing.Size(152, 21);
-            this.AuthorComboBox.TabIndex = 22;
+            this.AuthorComboBox.TabIndex = 1;
             // 
             // BookForSaleCheckBox
             // 
             this.BookForSaleCheckBox.AutoSize = true;
             this.BookForSaleCheckBox.Location = new System.Drawing.Point(11, 198);
             this.BookForSaleCheckBox.Name = "BookForSaleCheckBox";
-            this.BookForSaleCheckBox.Size = new System.Drawing.Size(88, 17);
-            this.BookForSaleCheckBox.TabIndex = 23;
+            this.BookForSaleCheckBox.Size = new System.Drawing.Size(95, 21);
+            this.BookForSaleCheckBox.TabIndex = 7;
             this.BookForSaleCheckBox.Text = "Book for sale";
             this.BookForSaleCheckBox.UseVisualStyleBackColor = true;
             this.BookForSaleCheckBox.CheckedChanged += new System.EventHandler(this.BookForSaleCheckBox_CheckedChanged);
@@ -226,7 +226,7 @@
             this.GoBackButton.Location = new System.Drawing.Point(56, 272);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(70, 26);
-            this.GoBackButton.TabIndex = 24;
+            this.GoBackButton.TabIndex = 10;
             this.GoBackButton.Text = "Go back";
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
@@ -236,7 +236,7 @@
             this.SaveButton.Location = new System.Drawing.Point(132, 272);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(70, 26);
-            this.SaveButton.TabIndex = 25;
+            this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);

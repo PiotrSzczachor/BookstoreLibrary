@@ -202,5 +202,19 @@ namespace BookstoreLibrary.Logic
             }
             
         }
+
+        public void initHistoryTable(DataGridView historyTable, string username, Label label)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                User user = db.Users.FirstOrDefault(x => x.Username == username);
+                if (user != null)
+                {
+                    var history = user.History.Select(h => new {Id = h.Id, Book = h.Book.Title, Action = h.Action, ActionDate = h.ActionDate }).ToList();
+                    historyTable.DataSource = history;
+                    label.Text = username + " history:";
+                }
+            }
+        }
     }
 }

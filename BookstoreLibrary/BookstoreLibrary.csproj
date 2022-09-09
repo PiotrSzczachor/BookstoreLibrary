@@ -111,6 +111,12 @@
     <Compile Include="GUI\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UserHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\UserHistoryForm.Designer.cs">
+      <DependentUpon>UserHistoryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\UserPanelForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UserHistoryForm.resx">
+      <DependentUpon>UserHistoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserPanelForm.resx">
       <DependentUpon>UserPanelForm.cs</DependentUpon>
