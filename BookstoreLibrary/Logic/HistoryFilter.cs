@@ -31,7 +31,13 @@ namespace BookstoreLibrary.Logic
                 User user = db.Users.FirstOrDefault(u => u.Username == username);
                 if (user != null)
                 {
-                    var history = user.History.Select(h => new { Id = h.Id, Book = h.Book.Title, BookId = h.Book.Id, Action = h.Action, ActionDate = h.ActionDate }).Where(h => h.Action == action).ToList();
+                    var history = user.History.Where(h => h.Action == action).Select(h => new { Id = h.Id, Book = h.Book.Title, BookId = h.Book.Id, Action = h.Action, ActionDate = h.ActionDate}).ToList();
+                    foreach (var historyItem in history)
+                    {
+                        Console.WriteLine(action);
+                        Console.WriteLine(historyItem.Book);
+                    }
+                    historyTable.DataSource = history;
                     label.Text = username + " " + action + " history:";
                 }
             }
