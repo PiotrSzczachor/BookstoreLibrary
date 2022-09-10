@@ -35,6 +35,7 @@
             this.borrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.historyTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +77,8 @@
             this.actionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.borrowToolStripMenuItem,
             this.buyToolStripMenuItem,
-            this.returnToolStripMenuItem});
+            this.returnToolStripMenuItem,
+            this.allActionsToolStripMenuItem});
             this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
             this.actionToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
             this.actionToolStripMenuItem.Text = "Action";
@@ -86,18 +88,28 @@
             this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
             this.borrowToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.borrowToolStripMenuItem.Text = "Borrow";
+            this.borrowToolStripMenuItem.Click += new System.EventHandler(this.borrowToolStripMenuItem_Click);
             // 
             // buyToolStripMenuItem
             // 
             this.buyToolStripMenuItem.Name = "buyToolStripMenuItem";
             this.buyToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.buyToolStripMenuItem.Text = "Buy";
+            this.buyToolStripMenuItem.Click += new System.EventHandler(this.buyToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
             this.returnToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.returnToolStripMenuItem.Text = "Return";
+            this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
+            // 
+            // allActionsToolStripMenuItem
+            // 
+            this.allActionsToolStripMenuItem.Name = "allActionsToolStripMenuItem";
+            this.allActionsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.allActionsToolStripMenuItem.Text = "All actions";
+            this.allActionsToolStripMenuItem.Click += new System.EventHandler(this.allActionsToolStripMenuItem_Click);
             // 
             // UserHistoryForm
             // 
@@ -128,5 +140,6 @@
         private System.Windows.Forms.ToolStripMenuItem borrowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem allActionsToolStripMenuItem;
     }
 }

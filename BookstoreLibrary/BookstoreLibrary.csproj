@@ -132,6 +132,7 @@
     <Compile Include="Logic\AddingBookLogic.cs" />
     <Compile Include="Logic\BooksPanelLogic.cs" />
     <Compile Include="Logic\Encoder.cs" />
+    <Compile Include="Logic\HistoryFilter.cs" />
     <Compile Include="Logic\Initializer.cs" />
     <Compile Include="Logic\LogInLogic.cs" />
     <Compile Include="Logic\PasswordValidator.cs" />
