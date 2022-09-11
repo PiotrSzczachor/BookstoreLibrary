@@ -53,5 +53,12 @@ namespace BookstoreLibrary.GUI
             initializer.initHistoryTable(historyTable, userToCheck, UsernameHistoryLabel);
             UsernameHistoryLabel.Left = (this.Width - UsernameHistoryLabel.Width) / 2;
         }
+
+        private void GoBackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new UsersManagementForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }

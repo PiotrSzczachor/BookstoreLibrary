@@ -36,6 +36,7 @@
             this.buyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allActionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GoBackButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.historyTable)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +48,7 @@
             this.historyTable.Location = new System.Drawing.Point(37, 69);
             this.historyTable.Name = "historyTable";
             this.historyTable.RowHeadersWidth = 62;
-            this.historyTable.Size = new System.Drawing.Size(721, 357);
+            this.historyTable.Size = new System.Drawing.Size(721, 333);
             this.historyTable.TabIndex = 0;
             // 
             // UsernameHistoryLabel
@@ -56,19 +57,18 @@
             this.UsernameHistoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.UsernameHistoryLabel.Location = new System.Drawing.Point(310, 40);
             this.UsernameHistoryLabel.Name = "UsernameHistoryLabel";
-            this.UsernameHistoryLabel.Size = new System.Drawing.Size(206, 26);
+            this.UsernameHistoryLabel.Size = new System.Drawing.Size(146, 18);
             this.UsernameHistoryLabel.TabIndex = 1;
             this.UsernameHistoryLabel.Text = "Username history:";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.actionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,42 +80,53 @@
             this.returnToolStripMenuItem,
             this.allActionsToolStripMenuItem});
             this.actionToolStripMenuItem.Name = "actionToolStripMenuItem";
-            this.actionToolStripMenuItem.Size = new System.Drawing.Size(79, 29);
+            this.actionToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.actionToolStripMenuItem.Text = "Action";
             // 
             // borrowToolStripMenuItem
             // 
             this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
-            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.borrowToolStripMenuItem.Text = "Borrow";
             this.borrowToolStripMenuItem.Click += new System.EventHandler(this.borrowToolStripMenuItem_Click);
             // 
             // buyToolStripMenuItem
             // 
             this.buyToolStripMenuItem.Name = "buyToolStripMenuItem";
-            this.buyToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.buyToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.buyToolStripMenuItem.Text = "Buy";
             this.buyToolStripMenuItem.Click += new System.EventHandler(this.buyToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // allActionsToolStripMenuItem
             // 
             this.allActionsToolStripMenuItem.Name = "allActionsToolStripMenuItem";
-            this.allActionsToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.allActionsToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.allActionsToolStripMenuItem.Text = "All actions";
             this.allActionsToolStripMenuItem.Click += new System.EventHandler(this.allActionsToolStripMenuItem_Click);
+            // 
+            // GoBackButton
+            // 
+            this.GoBackButton.Location = new System.Drawing.Point(37, 408);
+            this.GoBackButton.Name = "GoBackButton";
+            this.GoBackButton.Size = new System.Drawing.Size(88, 30);
+            this.GoBackButton.TabIndex = 3;
+            this.GoBackButton.Text = "Go back";
+            this.GoBackButton.UseVisualStyleBackColor = true;
+            this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
             // UserHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.UsernameHistoryLabel);
             this.Controls.Add(this.historyTable);
             this.Controls.Add(this.menuStrip1);
@@ -141,5 +152,6 @@
         private System.Windows.Forms.ToolStripMenuItem buyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem allActionsToolStripMenuItem;
+        private System.Windows.Forms.Button GoBackButton;
     }
 }
