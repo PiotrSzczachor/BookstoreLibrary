@@ -129,7 +129,7 @@
     <Compile Include="GUI\UsersManagementForm.Designer.cs">
       <DependentUpon>UsersManagementForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logic\AddingBookLogic.cs" />
+    <Compile Include="Logic\BooksManager.cs" />
     <Compile Include="Logic\BooksPanelLogic.cs" />
     <Compile Include="Logic\Encoder.cs" />
     <Compile Include="Logic\HistoryFilter.cs" />

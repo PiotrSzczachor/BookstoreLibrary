@@ -11,7 +11,7 @@ using BookstoreLibrary.Entities;
 
 namespace BookstoreLibrary.Logic
 {
-    public class AddingBookLogic
+    public class BooksManager
     {
         public void changeFlagPicture(string currency, PictureBox flag)
         {
@@ -172,6 +172,41 @@ namespace BookstoreLibrary.Logic
                                 "Fail",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
+            }
+        }
+        public void deleteBook(int id)
+        {
+            using(var db = new BookstoreLibContext())
+            {
+                deleteBookToSell(id);
+                deleteBookToBorrow(id);
+                Book book = db.Books.FirstOrDefault(b => b.Id == id);
+                db.Books.Remove(book);
+                db.SaveChanges();
+            }
+        }
+        public void deleteBookToSell(int bookId)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                BookToSell bookToSell = db.BooksToSell.FirstOrDefault(b => b.Book.Id == bookId);
+                if (bookToSell != null)
+                {
+                    db.BooksToSell.Remove(bookToSell);
+                    db.SaveChanges();
+                }
+            }
+        }
+        public void deleteBookToBorrow(int bookId)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                BookToBorrow bookToBorrow = db.BooksToBorrow.FirstOrDefault(b => b.Book.Id == bookId);
+                if (bookToBorrow != null)
+                {
+                    db.BooksToBorrow.Remove(bookToBorrow);
+                    db.SaveChanges();
+                }
             }
         }
     }

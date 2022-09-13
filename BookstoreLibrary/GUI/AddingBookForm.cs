@@ -45,7 +45,7 @@ namespace BookstoreLibrary.GUI
 
         private void CurrencyComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            AddingBookLogic addingBookLogic = new AddingBookLogic();
+            BooksManager addingBookLogic = new BooksManager();
             addingBookLogic.changeFlagPicture(CurrencyComboBox.Text, CurrencyFlagPictureBox);
         }
 
@@ -94,7 +94,7 @@ namespace BookstoreLibrary.GUI
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            AddingBookLogic addingBookLogic = new AddingBookLogic();
+            BooksManager addingBookLogic = new BooksManager();
             if (BookForSaleCheckBox.Checked)
             {
                 addingBookLogic.addBookForSale(TitleBox.Text, AuthorComboBox.Text, TypeComboBox.Text,

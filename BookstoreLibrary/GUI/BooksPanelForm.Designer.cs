@@ -139,6 +139,7 @@
             this.DeleteButton.TabIndex = 4;
             this.DeleteButton.Text = "Delete book";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddButton
             // 

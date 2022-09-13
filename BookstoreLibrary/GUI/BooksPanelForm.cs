@@ -71,5 +71,12 @@ namespace BookstoreLibrary.GUI
             new AddingBookForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = BooksTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = BooksTable.Rows[selectedrowindex];
+            string bookId = Convert.ToString(selectedRow.Cells["Id"].Value);
+        }
     }
 }
