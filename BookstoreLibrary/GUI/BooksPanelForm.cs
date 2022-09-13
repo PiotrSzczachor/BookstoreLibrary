@@ -74,9 +74,40 @@ namespace BookstoreLibrary.GUI
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            int selectedrowindex = BooksTable.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = BooksTable.Rows[selectedrowindex];
-            string bookId = Convert.ToString(selectedRow.Cells["Id"].Value);
+            DialogResult result = MessageBox.Show("Are you sure you want to delete this book?", 
+                                                  "Delete confirmation",
+                                                  MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                int selectedrowindex = BooksTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = BooksTable.Rows[selectedrowindex];
+                int bookId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+                BooksManager booksManager = new BooksManager();
+                if (BooksTypeLabel.Text.Contains("All"))
+                {
+                    booksManager.deleteBook(bookId);
+                    Initializer initializer = new Initializer();
+                    initializer.initBooksPanel(BooksTable, BooksTypeLabel);
+                }
+                else
+                {
+                    if (BooksTypeLabel.Text.Contains("sell"))
+                    {
+                        booksManager.deleteBookToSell(bookId);
+                        BooksPanelLogic booksPanelLogic = new BooksPanelLogic();
+                        booksPanelLogic.fillTableWithBooksToSell(BooksTable, BooksTypeLabel);
+                    }
+                    else
+                    {
+                        if (BooksTypeLabel.Text.Contains("borrow"))
+                        {
+                            booksManager.deleteBookToBorrow(bookId);
+                            BooksPanelLogic booksPanelLogic = new BooksPanelLogic();
+                            booksPanelLogic.fillTableWithBooksToBorrow(BooksTable, BooksTypeLabel);
+                        }
+                    }
+                }
+            }
         }
     }
 }
