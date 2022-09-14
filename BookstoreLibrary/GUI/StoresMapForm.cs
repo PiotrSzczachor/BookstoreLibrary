@@ -60,5 +60,14 @@ namespace BookstoreLibrary.GUI
             new AddingStoreForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
+
+        private void DeleteStoreButton_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = StoresList.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = StoresList.Rows[selectedrowindex];
+            int storeId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            StoresManager storesManager = new StoresManager();
+            storesManager.deleteStore(storeId, StoresMap, StoresList);
+        }
     }
 }

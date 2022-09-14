@@ -102,6 +102,7 @@
             this.DeleteStoreButton.TabIndex = 5;
             this.DeleteStoreButton.Text = "Delete store";
             this.DeleteStoreButton.UseVisualStyleBackColor = true;
+            this.DeleteStoreButton.Click += new System.EventHandler(this.DeleteStoreButton_Click);
             // 
             // StoresListLabel
             // 

@@ -8,6 +8,7 @@ using BookstoreLibrary.Entities;
 using Geocoding;
 using Geocoding.Microsoft;
 using GoogleMaps.LocationServices;
+using GMap.NET.WindowsForms;
 
 namespace BookstoreLibrary.Logic
 {
@@ -64,6 +65,35 @@ namespace BookstoreLibrary.Logic
                                 "Fill all values", 
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
+            }
+        }
+
+        public void deleteStore(int id, GMapControl map, DataGridView storesList)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this store?",
+                                "Delete confirmation",
+                                MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    Store storeToDelete = db.Stores.FirstOrDefault(x => x.Id == id);
+                    if (storeToDelete != null)
+                    {
+                        db.Addresses.Remove(storeToDelete.Address);
+                        db.Stores.Remove(storeToDelete);
+                        db.SaveChanges();
+                        MessageBox.Show("Store was deleted successfully",
+                                        "Success",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                        Initializer initializer = new Initializer();
+                        initializer.initStoreMarkersOnMap(map);
+                        initializer.initStoresList(storesList);
+                    }
+                }
+                
             }
         }
     }
