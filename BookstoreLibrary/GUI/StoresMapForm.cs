@@ -20,6 +20,8 @@ namespace BookstoreLibrary.GUI
         {
             InitializeComponent();
             currentlyLoggedUser = user;
+            Initializer initializer = new Initializer();
+            initializer.initStoresList(StoresList);
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)

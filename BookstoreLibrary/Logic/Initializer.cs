@@ -264,5 +264,18 @@ namespace BookstoreLibrary.Logic
                 }
             }
         }
+
+        public void initStoresList(DataGridView storesList)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                storesList.DataSource = db.Stores.Select(s => new { Name = s.Name,
+                                                                    OpeningHour = s.OpeningHour,
+                                                                    ClosingHour = s.ClosingHour,
+                                                                    Address = s.Address.Street + " " + s.Address.Number + ", " + s.Address.City,
+                                                                    OpeningDays = s.OpeningDays,
+                                                                    Id = s.Id }).ToList();
+            }
+        }
     }
 }

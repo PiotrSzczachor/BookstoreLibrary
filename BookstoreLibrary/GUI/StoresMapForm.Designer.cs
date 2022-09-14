@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.StoresMap = new GMap.NET.WindowsForms.GMapControl();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.AddStoreButton = new System.Windows.Forms.Button();
             this.EditStoreButton = new System.Windows.Forms.Button();
             this.DeleteStoreButton = new System.Windows.Forms.Button();
             this.StoresListLabel = new System.Windows.Forms.Label();
+            this.StoresList = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.StoresList)).BeginInit();
             this.SuspendLayout();
             // 
             // StoresMap
@@ -63,14 +64,6 @@
             this.StoresMap.TabIndex = 0;
             this.StoresMap.Zoom = 13D;
             this.StoresMap.Load += new System.EventHandler(this.StoresMap_Load);
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 40);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(358, 277);
-            this.listBox1.TabIndex = 1;
             // 
             // GoBackButton
             // 
@@ -120,21 +113,31 @@
             this.StoresListLabel.TabIndex = 6;
             this.StoresListLabel.Text = "Stores list:";
             // 
+            // StoresList
+            // 
+            this.StoresList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader;
+            this.StoresList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.StoresList.Location = new System.Drawing.Point(12, 41);
+            this.StoresList.Name = "StoresList";
+            this.StoresList.Size = new System.Drawing.Size(358, 275);
+            this.StoresList.TabIndex = 7;
+            // 
             // StoresMapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 367);
+            this.Controls.Add(this.StoresList);
             this.Controls.Add(this.StoresListLabel);
             this.Controls.Add(this.DeleteStoreButton);
             this.Controls.Add(this.EditStoreButton);
             this.Controls.Add(this.AddStoreButton);
             this.Controls.Add(this.GoBackButton);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.StoresMap);
             this.Name = "StoresMapForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StoresMapForm";
+            ((System.ComponentModel.ISupportInitialize)(this.StoresList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,11 +146,11 @@
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl StoresMap;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.Button AddStoreButton;
         private System.Windows.Forms.Button EditStoreButton;
         private System.Windows.Forms.Button DeleteStoreButton;
         private System.Windows.Forms.Label StoresListLabel;
+        private System.Windows.Forms.DataGridView StoresList;
     }
 }
