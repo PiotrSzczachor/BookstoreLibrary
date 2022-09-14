@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BookstoreLibrary.Entities;
 
 namespace BookstoreLibrary.Logic
 {
@@ -27,8 +28,15 @@ namespace BookstoreLibrary.Logic
             }
             if (allValuesValid)
             {
+                using (var db = new BookstoreLibContext())
+                {
+                    Address storeAddress = new Address { Street = street, City = city, PostalCode = postalCode, Number = number };
+                    db.Addresses.Add(storeAddress);
+                    db.SaveChanges();
 
-            } else
+                }
+            } 
+            else
             {
                 MessageBox.Show("You need to fill all values", 
                                 "Fill all values", 
