@@ -64,6 +64,7 @@
             this.StoresButton.TabIndex = 2;
             this.StoresButton.Text = "Stores";
             this.StoresButton.UseVisualStyleBackColor = true;
+            this.StoresButton.Click += new System.EventHandler(this.StoresButton_Click);
             // 
             // AccountButton
             // 

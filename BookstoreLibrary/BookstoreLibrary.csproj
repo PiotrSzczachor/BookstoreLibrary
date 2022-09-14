@@ -89,12 +89,19 @@
     <Compile Include="Entities\History.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\SoldBook.cs" />
+    <Compile Include="Entities\Store.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="GUI\AddingBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\AddingBookForm.Designer.cs">
       <DependentUpon>AddingBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AddingStoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddingStoreForm.Designer.cs">
+      <DependentUpon>AddingStoreForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\AddressInfoForm.cs">
       <SubType>Form</SubType>
@@ -131,6 +138,12 @@
     </Compile>
     <Compile Include="GUI\SignUpForm.Designer.cs">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StoresMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StoresMapForm.Designer.cs">
+      <DependentUpon>StoresMapForm.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UserHistoryForm.cs">
       <SubType>Form</SubType>
@@ -169,6 +182,9 @@
     <EmbeddedResource Include="GUI\AddingBookForm.resx">
       <DependentUpon>AddingBookForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AddingStoreForm.resx">
+      <DependentUpon>AddingStoreForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\AddressInfoForm.resx">
       <DependentUpon>AddressInfoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\SignUpForm.resx">
       <DependentUpon>SignUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StoresMapForm.resx">
+      <DependentUpon>StoresMapForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UserHistoryForm.resx">
       <DependentUpon>UserHistoryForm.cs</DependentUpon>

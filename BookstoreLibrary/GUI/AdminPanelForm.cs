@@ -44,5 +44,12 @@ namespace BookstoreLibrary.GUI
             new UsersManagementForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
+
+        private void StoresButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new StoresMapForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }

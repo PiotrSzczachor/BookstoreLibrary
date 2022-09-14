@@ -216,5 +216,31 @@ namespace BookstoreLibrary.Logic
                 }
             }
         }
+
+        public void initHoursComboBox(ComboBox hoursComboBox)
+        {
+            for(int i=1; i<25; i++)
+            {
+                if (i < 10) { hoursComboBox.Items.Add("0" + i.ToString()); } else { hoursComboBox.Items.Add(i.ToString()); }
+            }
+            
+        }
+
+        public void initMinutesComboBox(ComboBox minutesComboBox)
+        {
+            for(int i=0; i<61; i++)
+            {
+                if (i < 10) { minutesComboBox.Items.Add("0" + i.ToString()); } else { minutesComboBox.Items.Add(i.ToString()); }
+            }
+        }
+
+        public void initDaysCheckedListBox(CheckedListBox days)
+        {
+            string[] daysArr = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+            foreach(string day in daysArr)
+            {
+                days.Items.Add(day);
+            }
+        }
     }
 }
