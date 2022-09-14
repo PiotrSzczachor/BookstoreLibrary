@@ -87,7 +87,7 @@
             this.MinuteComboBox2.Location = new System.Drawing.Point(219, 65);
             this.MinuteComboBox2.Name = "MinuteComboBox2";
             this.MinuteComboBox2.Size = new System.Drawing.Size(46, 21);
-            this.MinuteComboBox2.TabIndex = 61;
+            this.MinuteComboBox2.TabIndex = 4;
             // 
             // HourComboBox2
             // 
@@ -95,7 +95,7 @@
             this.HourComboBox2.Location = new System.Drawing.Point(124, 65);
             this.HourComboBox2.Name = "HourComboBox2";
             this.HourComboBox2.Size = new System.Drawing.Size(46, 21);
-            this.HourComboBox2.TabIndex = 60;
+            this.HourComboBox2.TabIndex = 3;
             // 
             // ClosingHourLabel
             // 
@@ -130,7 +130,7 @@
             this.MinuteComboBox1.Location = new System.Drawing.Point(219, 38);
             this.MinuteComboBox1.Name = "MinuteComboBox1";
             this.MinuteComboBox1.Size = new System.Drawing.Size(46, 21);
-            this.MinuteComboBox1.TabIndex = 56;
+            this.MinuteComboBox1.TabIndex = 2;
             // 
             // HourComboBox1
             // 
@@ -138,7 +138,7 @@
             this.HourComboBox1.Location = new System.Drawing.Point(124, 38);
             this.HourComboBox1.Name = "HourComboBox1";
             this.HourComboBox1.Size = new System.Drawing.Size(46, 21);
-            this.HourComboBox1.TabIndex = 55;
+            this.HourComboBox1.TabIndex = 1;
             // 
             // OpeningHourLabel
             // 
@@ -163,24 +163,25 @@
             this.textBox1.Location = new System.Drawing.Point(93, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(172, 20);
-            this.textBox1.TabIndex = 52;
+            this.textBox1.TabIndex = 0;
             // 
             // SaveButton
             // 
             this.SaveButton.Enabled = false;
-            this.SaveButton.Location = new System.Drawing.Point(133, 286);
+            this.SaveButton.Location = new System.Drawing.Point(133, 315);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(72, 26);
-            this.SaveButton.TabIndex = 51;
+            this.SaveButton.TabIndex = 11;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Location = new System.Drawing.Point(55, 286);
+            this.GoBackButton.Location = new System.Drawing.Point(55, 315);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(72, 26);
-            this.GoBackButton.TabIndex = 50;
+            this.GoBackButton.TabIndex = 10;
             this.GoBackButton.Text = "Go back";
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
@@ -188,7 +189,7 @@
             // PostalCodeLabel
             // 
             this.PostalCodeLabel.AutoSize = true;
-            this.PostalCodeLabel.Location = new System.Drawing.Point(10, 263);
+            this.PostalCodeLabel.Location = new System.Drawing.Point(10, 292);
             this.PostalCodeLabel.Name = "PostalCodeLabel";
             this.PostalCodeLabel.Size = new System.Drawing.Size(66, 13);
             this.PostalCodeLabel.TabIndex = 49;
@@ -197,7 +198,7 @@
             // CityLabel
             // 
             this.CityLabel.AutoSize = true;
-            this.CityLabel.Location = new System.Drawing.Point(10, 237);
+            this.CityLabel.Location = new System.Drawing.Point(10, 266);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(27, 13);
             this.CityLabel.TabIndex = 48;
@@ -206,7 +207,7 @@
             // NumberLabel
             // 
             this.NumberLabel.AutoSize = true;
-            this.NumberLabel.Location = new System.Drawing.Point(10, 211);
+            this.NumberLabel.Location = new System.Drawing.Point(10, 240);
             this.NumberLabel.Name = "NumberLabel";
             this.NumberLabel.Size = new System.Drawing.Size(47, 13);
             this.NumberLabel.TabIndex = 47;
@@ -215,7 +216,7 @@
             // StreetLabel
             // 
             this.StreetLabel.AutoSize = true;
-            this.StreetLabel.Location = new System.Drawing.Point(10, 185);
+            this.StreetLabel.Location = new System.Drawing.Point(10, 214);
             this.StreetLabel.Name = "StreetLabel";
             this.StreetLabel.Size = new System.Drawing.Size(38, 13);
             this.StreetLabel.TabIndex = 46;
@@ -223,45 +224,45 @@
             // 
             // PostalCodeBox
             // 
-            this.PostalCodeBox.Location = new System.Drawing.Point(93, 260);
+            this.PostalCodeBox.Location = new System.Drawing.Point(93, 289);
             this.PostalCodeBox.Name = "PostalCodeBox";
             this.PostalCodeBox.Size = new System.Drawing.Size(172, 20);
-            this.PostalCodeBox.TabIndex = 45;
+            this.PostalCodeBox.TabIndex = 9;
             // 
             // CityBox
             // 
-            this.CityBox.Location = new System.Drawing.Point(93, 234);
+            this.CityBox.Location = new System.Drawing.Point(93, 263);
             this.CityBox.Name = "CityBox";
             this.CityBox.Size = new System.Drawing.Size(172, 20);
-            this.CityBox.TabIndex = 44;
+            this.CityBox.TabIndex = 8;
             // 
             // NumberTextBox
             // 
-            this.NumberTextBox.Location = new System.Drawing.Point(93, 208);
+            this.NumberTextBox.Location = new System.Drawing.Point(93, 237);
             this.NumberTextBox.Name = "NumberTextBox";
             this.NumberTextBox.Size = new System.Drawing.Size(172, 20);
-            this.NumberTextBox.TabIndex = 43;
+            this.NumberTextBox.TabIndex = 7;
             // 
             // StreetBox
             // 
-            this.StreetBox.Location = new System.Drawing.Point(93, 182);
+            this.StreetBox.Location = new System.Drawing.Point(93, 211);
             this.StreetBox.Name = "StreetBox";
             this.StreetBox.Size = new System.Drawing.Size(172, 20);
-            this.StreetBox.TabIndex = 42;
+            this.StreetBox.TabIndex = 6;
             // 
             // DaysCheckBoxList
             // 
             this.DaysCheckBoxList.FormattingEnabled = true;
             this.DaysCheckBoxList.Location = new System.Drawing.Point(93, 95);
             this.DaysCheckBoxList.Name = "DaysCheckBoxList";
-            this.DaysCheckBoxList.Size = new System.Drawing.Size(172, 79);
-            this.DaysCheckBoxList.TabIndex = 72;
+            this.DaysCheckBoxList.Size = new System.Drawing.Size(172, 109);
+            this.DaysCheckBoxList.TabIndex = 5;
             // 
             // AddingStoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 319);
+            this.ClientSize = new System.Drawing.Size(279, 351);
             this.Controls.Add(this.DaysCheckBoxList);
             this.Controls.Add(this.DaysLabel);
             this.Controls.Add(this.MinuteLabel2);

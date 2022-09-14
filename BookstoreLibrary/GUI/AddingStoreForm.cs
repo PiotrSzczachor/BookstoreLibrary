@@ -37,5 +37,10 @@ namespace BookstoreLibrary.GUI
             new AdminPanelForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

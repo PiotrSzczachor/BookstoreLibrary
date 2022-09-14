@@ -241,6 +241,10 @@ namespace BookstoreLibrary.Logic
             {
                 days.Items.Add(day);
             }
+            for (int i = 0; i < days.Items.Count; i++)
+            {
+                days.SetItemChecked(i, true);
+            }
         }
     }
 }

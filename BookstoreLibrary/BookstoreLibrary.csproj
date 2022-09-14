@@ -171,6 +171,7 @@
     <Compile Include="Logic\LogInLogic.cs" />
     <Compile Include="Logic\PasswordValidator.cs" />
     <Compile Include="Logic\SignUpLogic.cs" />
+    <Compile Include="Logic\StoresManager.cs" />
     <Compile Include="Logic\UsersManager.cs" />
     <Compile Include="Migrations\202208071746442_InitialMigration.cs" />
     <Compile Include="Migrations\202208071746442_InitialMigration.designer.cs">

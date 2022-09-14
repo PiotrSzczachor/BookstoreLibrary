@@ -14,7 +14,8 @@ namespace BookstoreLibrary.Entities
         public virtual Address Address { get; set; }
         public double Latitude { get; set; }
         public double Longitude { get; set; }
-        public TimeSpan OpeningHour { get; set; }
-        public TimeSpan ClosingHour { get; set; }
+        public string OpeningHour { get; set; }
+        public string ClosingHour { get; set; }
+        public string OpeningDays { get; set; }
     }
 }
