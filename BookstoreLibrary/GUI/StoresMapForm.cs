@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookstoreLibrary.Entities;
-using GMap.NET.WindowsForms;
-using GMap.NET.WindowsForms.Markers;
+using BookstoreLibrary.Logic;
+using GMap.NET;
 
 namespace BookstoreLibrary.GUI
 {
@@ -44,14 +44,12 @@ namespace BookstoreLibrary.GUI
         private void StoresMap_Load(object sender, EventArgs e)
         {
             StoresMap.MapProvider = GMap.NET.MapProviders.OpenStreetMapProvider.Instance;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+            GMaps.Instance.Mode = AccessMode.ServerOnly;
             StoresMap.SetPositionByKeywords("Poland");
             StoresMap.Zoom = 5;
             StoresMap.ShowCenter = false;
-            GMapOverlay markers = new GMapOverlay("markers");
-            GMapMarker marker = new GMarkerGoogle(new GMap.NET.PointLatLng(50.067658, 19.946017), GMarkerGoogleType.red);
-            markers.Markers.Add(marker);
-            StoresMap.Overlays.Add(markers);
+            Initializer initializer = new Initializer();
+            initializer.initStoreMarkersOnMap(StoresMap);
         }
 
         private void AddStoreButton_Click(object sender, EventArgs e)

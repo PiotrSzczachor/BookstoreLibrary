@@ -9,6 +9,9 @@ using System.IO;
 using Newtonsoft.Json;
 using BookstoreLibrary.Entities;
 using System.Drawing;
+using GMap.NET.WindowsForms;
+using GMap.NET;
+using GMap.NET.WindowsForms.Markers;
 
 namespace BookstoreLibrary.Logic
 {
@@ -244,6 +247,21 @@ namespace BookstoreLibrary.Logic
             for (int i = 0; i < days.Items.Count; i++)
             {
                 days.SetItemChecked(i, true);
+            }
+        }
+
+        public void initStoreMarkersOnMap(GMapControl map)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                List<Store> stores = db.Stores.ToList();
+                foreach (Store store in stores)
+                {
+                    GMapOverlay markers = new GMapOverlay("markers");
+                    GMapMarker marker = new GMarkerGoogle(new GMap.NET.PointLatLng(store.Latitude, store.Longitude), GMarkerGoogleType.red);
+                    markers.Markers.Add(marker);
+                    map.Overlays.Add(markers);
+                }
             }
         }
     }

@@ -5,12 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BookstoreLibrary.Entities;
+using Geocoding;
+using Geocoding.Microsoft;
+using GoogleMaps.LocationServices;
 
 namespace BookstoreLibrary.Logic
 {
     public class StoresManager
     {
-        public void addStore(string name, string openingHour, string openingMinute, string closingHour, string closingMinute,
+        public async void addStore(string name, string openingHour, string openingMinute, string closingHour, string closingMinute,
                              List<string> openingDays, string street, string number, string city, string postalCode)
         {
             List<string> values = new List<string> { name, openingHour, openingMinute, closingHour, closingMinute, street, number, city, postalCode };
@@ -30,10 +33,29 @@ namespace BookstoreLibrary.Logic
             {
                 using (var db = new BookstoreLibContext())
                 {
-                    Address storeAddress = new Address { Street = street, City = city, PostalCode = postalCode, Number = number };
+                    BookstoreLibrary.Entities.Address storeAddress = new BookstoreLibrary.Entities.Address { Street = street, City = city, PostalCode = postalCode, Number = number };
                     db.Addresses.Add(storeAddress);
                     db.SaveChanges();
-
+                    var address = street + " "  + number + ", " + city + ", " + postalCode;
+                    IGeocoder geocoder = new BingMapsGeocoder("AiePEZC3a_AhN_9YAvmhZ55zw296iW_-ZEWUwf-cHyPpecM6AnOL6bLCDz9qQwnP");
+                    IEnumerable<Geocoding.Address> coordinates = await geocoder.GeocodeAsync(address);
+                    double latitude = coordinates.First().Coordinates.Latitude;
+                    double longitude = coordinates.First().Coordinates.Longitude;
+                    string openingHours = openingHour + ":" + openingMinute;
+                    string closingHours = closingHour + ":" + closingMinute;
+                    string openingDaysStr = "";
+                    foreach (string day in openingDays)
+                    {
+                        openingDaysStr += day + ",";
+                    }
+                    openingDaysStr = openingDaysStr.Remove(openingDaysStr.Length - 1, 1);
+                    Store store = new Store { Name = name, Address = storeAddress, Latitude = latitude, Longitude = longitude, OpeningHour = openingHours, ClosingHour = closingHours, OpeningDays = openingDaysStr};
+                    db.Stores.Add(store);
+                    db.SaveChanges();
+                    MessageBox.Show("New store was added successfully",
+                                    "Success",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                 }
             } 
             else

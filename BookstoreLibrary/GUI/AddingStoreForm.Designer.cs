@@ -40,7 +40,7 @@
             this.HourComboBox1 = new System.Windows.Forms.ComboBox();
             this.OpeningHourLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.PostalCodeLabel = new System.Windows.Forms.Label();
@@ -158,16 +158,15 @@
             this.NameLabel.TabIndex = 53;
             this.NameLabel.Text = "Name:";
             // 
-            // textBox1
+            // NameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(93, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 20);
-            this.textBox1.TabIndex = 0;
+            this.NameBox.Location = new System.Drawing.Point(93, 12);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(172, 20);
+            this.NameBox.TabIndex = 0;
             // 
             // SaveButton
             // 
-            this.SaveButton.Enabled = false;
             this.SaveButton.Location = new System.Drawing.Point(133, 315);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(72, 26);
@@ -276,7 +275,7 @@
             this.Controls.Add(this.HourComboBox1);
             this.Controls.Add(this.OpeningHourLabel);
             this.Controls.Add(this.NameLabel);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.NameBox);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.PostalCodeLabel);
@@ -309,7 +308,7 @@
         private System.Windows.Forms.ComboBox HourComboBox1;
         private System.Windows.Forms.Label OpeningHourLabel;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NameBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Button GoBackButton;
         private System.Windows.Forms.Label PostalCodeLabel;

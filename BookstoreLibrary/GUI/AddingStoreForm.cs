@@ -34,13 +34,20 @@ namespace BookstoreLibrary.GUI
         private void GoBackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new AdminPanelForm(currentlyLoggedUser).ShowDialog();
+            new StoresMapForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-
+            List<string> days = new List<string>();
+            foreach (string day in DaysCheckBoxList.CheckedItems)
+            {
+                days.Add(day);
+            }
+            StoresManager manager = new StoresManager();
+            manager.addStore(NameBox.Text, HourComboBox1.Text, MinuteComboBox1.Text, HourComboBox2.Text, MinuteComboBox2.Text,
+                             days, StreetBox.Text, NumberTextBox.Text, CityBox.Text, PostalCodeBox.Text);
         }
     }
 }

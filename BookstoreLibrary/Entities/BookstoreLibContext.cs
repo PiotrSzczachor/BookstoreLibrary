@@ -22,5 +22,6 @@ namespace BookstoreLibrary.Entities
         public DbSet<Role> Roles { get; set; }
         public DbSet<SoldBook> SoldBooks { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Store> Stores { get; set; }
     }
 }
