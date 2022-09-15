@@ -88,9 +88,6 @@ namespace BookstoreLibrary.Logic
                                         "Success",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
-                        Initializer initializer = new Initializer();
-                        initializer.initStoreMarkersOnMap(map);
-                        initializer.initStoresList(storesList);
                     }
                 }
                 

@@ -255,6 +255,10 @@ namespace BookstoreLibrary.Logic
             using (var db = new BookstoreLibContext())
             {
                 List<Store> stores = db.Stores.ToList();
+                foreach (var overlay in map.Overlays)
+                {
+                    overlay.Clear();
+                }
                 foreach (Store store in stores)
                 {
                     GMapOverlay markers = new GMapOverlay("markers");

@@ -68,6 +68,9 @@ namespace BookstoreLibrary.GUI
             int storeId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
             StoresManager storesManager = new StoresManager();
             storesManager.deleteStore(storeId, StoresMap, StoresList);
+            this.Hide();
+            new StoresMapForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
         }
     }
 }
