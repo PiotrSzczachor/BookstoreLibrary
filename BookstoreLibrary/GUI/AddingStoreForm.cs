@@ -17,6 +17,17 @@ namespace BookstoreLibrary.GUI
         User currentlyLoggedUser;
         bool isEdit;
         int storeId;
+        string initName;
+        string initOpenHour;
+        string initOpenMinute;
+        string initCloseHour;
+        string initCloseMinute;
+        string initDays;
+        string initStreet;
+        string initNumber;
+        string initCity;
+        string initPostalCode;
+
         public AddingStoreForm(User user, bool edit = false, int id = -1)
         {
             InitializeComponent();
@@ -36,13 +47,30 @@ namespace BookstoreLibrary.GUI
                 MinuteComboBox2.Text = "00";
             } else
             {
+                SaveButton.Enabled = false;
                 storeId = id;
                 StoresManager storesManager = new StoresManager();
                 storesManager.getStoreInfo(storeId, NameBox, HourComboBox1, MinuteComboBox1, HourComboBox2,
                                            MinuteComboBox2, DaysCheckBoxList, StreetBox, NumberTextBox, CityBox,
                                            PostalCodeBox);
+                initName = NameBox.Text;
+                initOpenHour = HourComboBox1.Text;
+                initOpenMinute = MinuteComboBox1.Text;
+                initCloseHour = HourComboBox2.Text;
+                initCloseMinute = MinuteComboBox2.Text;
+                initDays = "";
+                foreach (string day in DaysCheckBoxList.CheckedItems)
+                {
+                    initDays += day + ",";
+                }
+                if (initDays.Length < 0) { initDays = initDays.Remove(initDays.Length - 1, 1); }
+                initStreet = StreetBox.Text;
+                initNumber = NumberTextBox.Text;
+                initCity = CityBox.Text;
+                initPostalCode = PostalCodeBox.Text;
+                CheckChangesTimer.Enabled = true;
+                CheckChangesTimer.Start();
             }
-            
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)
@@ -54,15 +82,58 @@ namespace BookstoreLibrary.GUI
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
-            List<string> days = new List<string>();
-            foreach (string day in DaysCheckBoxList.CheckedItems)
+            if (!isEdit)
             {
-                days.Add(day);
+                List<string> days = new List<string>();
+                foreach (string day in DaysCheckBoxList.CheckedItems)
+                {
+                    days.Add(day);
+                }
+                StoresManager manager = new StoresManager();
+                manager.addStore(NameBox.Text, HourComboBox1.Text, MinuteComboBox1.Text, HourComboBox2.Text, MinuteComboBox2.Text,
+                                 days, StreetBox.Text, NumberTextBox.Text, CityBox.Text, PostalCodeBox.Text);
             }
-            StoresManager manager = new StoresManager();
-            manager.addStore(NameBox.Text, HourComboBox1.Text, MinuteComboBox1.Text, HourComboBox2.Text, MinuteComboBox2.Text,
-                             days, StreetBox.Text, NumberTextBox.Text, CityBox.Text, PostalCodeBox.Text);
+            else
+            {
+                StoresManager manager = new StoresManager();
+                manager.editStore(storeId, NameBox.Text, HourComboBox1.Text, MinuteComboBox1.Text, HourComboBox2.Text, MinuteComboBox2.Text,
+                                 DaysCheckBoxList, StreetBox.Text, NumberTextBox.Text, CityBox.Text, PostalCodeBox.Text);
+            }
+            
         }
 
+        private void CheckChangesTimer_Tick(object sender, EventArgs e)
+        {
+            string days = "";
+            foreach (string day in DaysCheckBoxList.CheckedItems)
+            {
+                days += day + ",";
+            }
+            if (days.Length > 0) { days = days.Remove(days.Length - 1, 1); }
+            List<string> values = new List<string>{ NameBox.Text, HourComboBox1.Text, MinuteComboBox1.Text, HourComboBox2.Text, MinuteComboBox2.Text,
+                                             days, StreetBox.Text, NumberTextBox.Text, CityBox.Text, PostalCodeBox.Text };
+            List<string> initValues = new List<string> { initName, initOpenHour, initOpenMinute, initCloseHour, initCloseMinute, initDays,
+                                                         initStreet, initNumber, initCity, initPostalCode};
+            bool emptyValues = false;
+            bool valuesChanged = false;
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (string.IsNullOrEmpty(values[i]))
+                {
+                    emptyValues = true;
+                }
+                if (values[i] != initValues[i])
+                {
+                    valuesChanged = true;
+                }
+            }
+            if (!emptyValues && valuesChanged)
+            {
+                SaveButton.Enabled = true;
+            } else
+            {
+                SaveButton.Enabled = false;
+            }
+        }
     }
 }

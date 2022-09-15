@@ -231,7 +231,7 @@ namespace BookstoreLibrary.Logic
 
         public void initMinutesComboBox(ComboBox minutesComboBox)
         {
-            for(int i=0; i<61; i++)
+            for(int i=0; i<60; i++)
             {
                 if (i < 10) { minutesComboBox.Items.Add("0" + i.ToString()); } else { minutesComboBox.Items.Add(i.ToString()); }
             }

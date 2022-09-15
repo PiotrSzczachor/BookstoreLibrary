@@ -14,6 +14,7 @@ namespace BookstoreLibrary.Logic
 {
     public class StoresManager
     {
+        string apiKey = "AiePEZC3a_AhN_9YAvmhZ55zw296iW_-ZEWUwf-cHyPpecM6AnOL6bLCDz9qQwnP";
         public async void addStore(string name, string openingHour, string openingMinute, string closingHour, string closingMinute,
                              List<string> openingDays, string street, string number, string city, string postalCode)
         {
@@ -38,7 +39,7 @@ namespace BookstoreLibrary.Logic
                     db.Addresses.Add(storeAddress);
                     db.SaveChanges();
                     var address = street + " "  + number + ", " + city + ", " + postalCode;
-                    IGeocoder geocoder = new BingMapsGeocoder("AiePEZC3a_AhN_9YAvmhZ55zw296iW_-ZEWUwf-cHyPpecM6AnOL6bLCDz9qQwnP");
+                    IGeocoder geocoder = new BingMapsGeocoder(apiKey);
                     IEnumerable<Geocoding.Address> coordinates = await geocoder.GeocodeAsync(address);
                     double latitude = coordinates.First().Coordinates.Latitude;
                     double longitude = coordinates.First().Coordinates.Longitude;
@@ -49,7 +50,7 @@ namespace BookstoreLibrary.Logic
                     {
                         openingDaysStr += day + ",";
                     }
-                    openingDaysStr = openingDaysStr.Remove(openingDaysStr.Length - 1, 1);
+                    if (openingDaysStr.Length > 0) { openingDaysStr = openingDaysStr.Remove(openingDaysStr.Length - 1, 1); }
                     Store store = new Store { Name = name, Address = storeAddress, Latitude = latitude, Longitude = longitude, OpeningHour = openingHours, ClosingHour = closingHours, OpeningDays = openingDaysStr};
                     db.Stores.Add(store);
                     db.SaveChanges();
@@ -58,7 +59,7 @@ namespace BookstoreLibrary.Logic
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
                 }
-            } 
+            }
             else
             {
                 MessageBox.Show("You need to fill all values", 
@@ -127,12 +128,55 @@ namespace BookstoreLibrary.Logic
                 numberBox.Text = store.Address.Number;
                 cityBox.Text = store.Address.City;
                 postalCodeBox.Text = store.Address.PostalCode;
+                Initializer initializer = new Initializer();
+                initializer.initHoursComboBox(openingHourBox);
+                initializer.initHoursComboBox(closingHourBox);
+                initializer.initMinutesComboBox(openingMinuteBox);
+                initializer.initMinutesComboBox(closingMinuteBox);
             }
         }
 
-        public void editStore()
+        public async void editStore(int storeId, string nameBox, string openingHourBox, string openingMinuteBox,
+                                 string closingHourBox, string closingMinuteBox, CheckedListBox daysList,
+                                 string streetBox, string numberBox, string cityBox, string postalCodeBox)
         {
-
+            string days = "";
+            foreach (string day in daysList.CheckedItems)
+            {
+                days += day + ",";
+            }
+            days = days.Remove(days.Length - 1, 1);
+            string openingHour = openingHourBox + ":" + openingMinuteBox;
+            string closingHour = closingHourBox + ":" + closingMinuteBox;
+            using (var db = new BookstoreLibContext())
+            {
+                Store storeToEdit = db.Stores.FirstOrDefault(s => s.Id == storeId);
+                if (storeToEdit != null)
+                {
+                    BookstoreLibrary.Entities.Address address = storeToEdit.Address;
+                    address.Street = streetBox;
+                    address.Number = numberBox;
+                    address.City = cityBox;
+                    address.PostalCode = postalCodeBox;
+                    storeToEdit.Name = nameBox;
+                    storeToEdit.OpeningHour = openingHour;
+                    storeToEdit.ClosingHour = closingHour;
+                    storeToEdit.OpeningDays = days;
+                    var storeAddress = streetBox + " " + numberBox + ", " + cityBox + ", " + postalCodeBox;
+                    IGeocoder geocoder = new BingMapsGeocoder(apiKey);
+                    IEnumerable<Geocoding.Address> coordinates = await geocoder.GeocodeAsync(storeAddress);
+                    double latitude = coordinates.First().Coordinates.Latitude;
+                    double longitude = coordinates.First().Coordinates.Longitude;
+                    storeToEdit.Latitude = latitude;
+                    storeToEdit.Longitude = longitude;
+                    db.SaveChanges();
+                    MessageBox.Show("Store was edited successfully",
+                                    "Success",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
         }
+
     }
 }

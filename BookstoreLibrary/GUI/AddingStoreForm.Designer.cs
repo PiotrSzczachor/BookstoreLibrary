@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.DaysLabel = new System.Windows.Forms.Label();
             this.MinuteLabel2 = new System.Windows.Forms.Label();
             this.HourLabel2 = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@
             this.NumberTextBox = new System.Windows.Forms.TextBox();
             this.StreetBox = new System.Windows.Forms.TextBox();
             this.DaysCheckBoxList = new System.Windows.Forms.CheckedListBox();
+            this.CheckChangesTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // DaysLabel
@@ -257,6 +259,10 @@
             this.DaysCheckBoxList.Size = new System.Drawing.Size(172, 109);
             this.DaysCheckBoxList.TabIndex = 5;
             // 
+            // CheckChangesTimer
+            // 
+            this.CheckChangesTimer.Tick += new System.EventHandler(this.CheckChangesTimer_Tick);
+            // 
             // AddingStoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,5 +326,6 @@
         private System.Windows.Forms.TextBox NumberTextBox;
         private System.Windows.Forms.TextBox StreetBox;
         private System.Windows.Forms.CheckedListBox DaysCheckBoxList;
+        private System.Windows.Forms.Timer CheckChangesTimer;
     }
 }
