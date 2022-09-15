@@ -73,6 +73,18 @@ namespace BookstoreLibrary.GUI
             int userId = Convert.ToInt32(userIdStr);
             UsersManager usersManager = new UsersManager();
             usersManager.deleteUser(userId, currentlyLoggedUser);
+            Initializer initializer = new Initializer();
+            initializer.initUsersTable(UsersTable, UsersTypeLabel);
+        }
+
+        private void EditButton_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = UsersTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = UsersTable.Rows[selectedrowindex];
+            string userIdStr = Convert.ToString(selectedRow.Cells["Id"].Value);
+            this.Hide();
+            new UserEditForm(currentlyLoggedUser, Int32.Parse(userIdStr)).ShowDialog();
+            this.Close();
         }
     }
 }

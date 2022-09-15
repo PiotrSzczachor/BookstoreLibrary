@@ -42,7 +42,7 @@ namespace BookstoreLibrary.GUI
         {
             SignUpLogic signUpLogic = new SignUpLogic();
             string phoneNumber = PhoneCodesComboBox.Text + PhoneBox.Text;
-            signUpLogic.signUp(NameBox.Text, SurnameBox.Text, EmailBox.Text, PhoneBox.Text, UsernameBox.Text, PasswordBox.Text, RepeatPasswordBox.Text,
+            signUpLogic.signUp(NameBox.Text, SurnameBox.Text, EmailBox.Text, phoneNumber, UsernameBox.Text, PasswordBox.Text, RepeatPasswordBox.Text,
                                isPasswordValid, StreetComboBox.Text, NumberTextBox.Text, CitiesComboBox.Text, PostalCodeComboBox.Text);
         }
 

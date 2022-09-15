@@ -281,5 +281,34 @@ namespace BookstoreLibrary.Logic
                                                                     Id = s.Id }).ToList();
             }
         }
+
+        public void initUserInfo(int userId, TextBox nameBox, TextBox surnameBox, TextBox usernameBox, TextBox emailBox, ComboBox phoneCode, TextBox phoneBox)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                User user = db.Users.FirstOrDefault(u => u.Id == userId);
+                nameBox.Text = user.Name;
+                surnameBox.Text = user.Surname;
+                usernameBox.Text = user.Username;
+                emailBox.Text = user.Email;
+                string wholePhoneNumber = user.PhoneNumber;
+                string countryCode = "";
+                string phoneNumber = "";
+                for (int i = 0; i < wholePhoneNumber.Length; i++)
+                {
+                    if (i < 3)
+                    {
+                        countryCode += wholePhoneNumber[i].ToString();
+                    }
+                    else
+                    {
+                        phoneNumber += wholePhoneNumber[i].ToString();
+                    }
+                }
+                Console.WriteLine(countryCode);
+                phoneCode.Text = countryCode;
+                phoneBox.Text = phoneNumber;
+            }
+        }
     }
 }
