@@ -64,5 +64,15 @@ namespace BookstoreLibrary.GUI
             }
             
         }
+
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = UsersTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = UsersTable.Rows[selectedrowindex];
+            string userIdStr = Convert.ToString(selectedRow.Cells["Id"].Value);
+            int userId = Convert.ToInt32(userIdStr);
+            UsersManager usersManager = new UsersManager();
+            usersManager.deleteUser(userId, currentlyLoggedUser);
+        }
     }
 }
