@@ -93,5 +93,46 @@ namespace BookstoreLibrary.Logic
                 
             }
         }
+
+        public void getStoreInfo(int storeId, TextBox nameBox, ComboBox openingHourBox, ComboBox openingMinuteBox,
+                                 ComboBox closingHourBox, ComboBox closingMinuteBox, CheckedListBox daysList,
+                                 TextBox streetBox, TextBox numberBox, TextBox cityBox, TextBox postalCodeBox)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                Store store = db.Stores.FirstOrDefault(x => x.Id == storeId);
+                string openingHour = store.OpeningHour.Split(':').First();
+                string closingHour = store.ClosingHour.Split(':').First();
+                string openingMinute = store.OpeningHour.Split(':').Last();
+                string closingMinute = store.ClosingHour.Split(':').Last();
+                nameBox.Text = store.Name;
+                openingHourBox.Text = openingHour;
+                openingMinuteBox.Text = openingMinute;
+                closingHourBox.Text = closingHour;
+                closingMinuteBox.Text = closingMinute;
+                string[] weekDays = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
+                string[] openingDays = store.OpeningDays.Split(',');
+                foreach (string day in weekDays)
+                {
+                    daysList.Items.Add(day);
+                }
+                for (int i = 0; i < daysList.Items.Count; i++)
+                {
+                    if (openingDays.Contains((string)daysList.Items[i]))
+                    {
+                        daysList.SetItemChecked(i, true);
+                    }
+                }
+                streetBox.Text = store.Address.Street;
+                numberBox.Text = store.Address.Number;
+                cityBox.Text = store.Address.City;
+                postalCodeBox.Text = store.Address.PostalCode;
+            }
+        }
+
+        public void editStore()
+        {
+
+        }
     }
 }

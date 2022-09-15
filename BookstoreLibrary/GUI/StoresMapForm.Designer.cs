@@ -93,6 +93,7 @@
             this.EditStoreButton.TabIndex = 4;
             this.EditStoreButton.Text = "Edit store info";
             this.EditStoreButton.UseVisualStyleBackColor = true;
+            this.EditStoreButton.Click += new System.EventHandler(this.EditStoreButton_Click);
             // 
             // DeleteStoreButton
             // 

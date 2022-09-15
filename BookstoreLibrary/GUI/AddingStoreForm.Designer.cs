@@ -167,7 +167,7 @@
             // 
             // SaveButton
             // 
-            this.SaveButton.Location = new System.Drawing.Point(133, 315);
+            this.SaveButton.Location = new System.Drawing.Point(141, 315);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(72, 26);
             this.SaveButton.TabIndex = 11;
@@ -177,7 +177,7 @@
             // 
             // GoBackButton
             // 
-            this.GoBackButton.Location = new System.Drawing.Point(55, 315);
+            this.GoBackButton.Location = new System.Drawing.Point(63, 315);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(72, 26);
             this.GoBackButton.TabIndex = 10;
@@ -261,7 +261,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 351);
+            this.ClientSize = new System.Drawing.Size(279, 346);
             this.Controls.Add(this.DaysCheckBoxList);
             this.Controls.Add(this.DaysLabel);
             this.Controls.Add(this.MinuteLabel2);

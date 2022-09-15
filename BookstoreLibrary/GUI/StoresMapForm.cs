@@ -72,5 +72,15 @@ namespace BookstoreLibrary.GUI
             new StoresMapForm(currentlyLoggedUser).ShowDialog();
             this.Close();
         }
+
+        private void EditStoreButton_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = StoresList.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = StoresList.Rows[selectedrowindex];
+            int storeId = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+            this.Hide();
+            new AddingStoreForm(currentlyLoggedUser, true, storeId).ShowDialog();
+            this.Close();
+        }
     }
 }
