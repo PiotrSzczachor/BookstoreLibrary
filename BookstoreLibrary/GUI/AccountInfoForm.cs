@@ -16,6 +16,15 @@ namespace BookstoreLibrary.GUI
     {
         User currentlyLoggedUser;
         int userToCheckId;
+        string initName;
+        string initSurname;
+        string initUsername;
+        string initEmail;
+        string initCountryCode;
+        string initPhoneNumber;
+        string initRole;
+        bool emailChanged;
+        bool usernameChanged;
         public AccountInfoForm(User user)
         {
             InitializeComponent();
@@ -30,6 +39,15 @@ namespace BookstoreLibrary.GUI
                 RolesComboBox.Items.Add(role);
             }
             RolesComboBox.Text = currentlyLoggedUser.Role.Name;
+            initName = NameBox.Text;
+            initSurname = SurnameBox.Text;
+            initUsername = UsernameBox.Text;
+            initEmail = EmailBox.Text;
+            initCountryCode = PhoneCodesComboBox.Text;
+            initPhoneNumber = PhoneBox.Text;
+            initRole = RolesComboBox.Text;
+            ChangesChecker.Enabled = true;
+            ChangesChecker.Start();
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)
@@ -82,6 +100,60 @@ namespace BookstoreLibrary.GUI
                 GoBackButton.Enabled = true;
                 ShowAddressButton.Enabled = true;
                 ChangePasswordButton.Enabled = true;
+            }
+        }
+
+        private void ChangesChecker_Tick(object sender, EventArgs e)
+        {
+            List<string> initValues = new List<string> { initName, initSurname, initUsername, initEmail, initCountryCode, initPhoneNumber, initRole };
+            List<string> values = new List<string> { NameBox.Text, SurnameBox.Text, UsernameBox.Text, EmailBox.Text, PhoneCodesComboBox.Text, PhoneBox.Text, RolesComboBox.Text };
+            bool emptyValues = false;
+            bool valuesChanged = false;
+            for (int i = 0; i < values.Count; i++)
+            {
+                if (string.IsNullOrEmpty(values[i]))
+                {
+                    emptyValues = true;
+                }
+                if (values[i] != initValues[i])
+                {
+                    valuesChanged = true;
+                }
+            }
+            if (initEmail != EmailBox.Text)
+            {
+                emailChanged = true;
+            }
+            else
+            {
+                emailChanged = false;
+            }
+            if (initUsername != UsernameBox.Text)
+            {
+                usernameChanged = true;
+            }
+            else
+            {
+                usernameChanged = false;
+            }
+            if (!emptyValues && valuesChanged)
+            {
+                SaveButton.Enabled = true;
+            }
+            else
+            {
+                SaveButton.Enabled = false;
+            }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            UsersManager usersManager = new UsersManager();
+            usersManager.editUser(emailChanged, usernameChanged, currentlyLoggedUser.Id, currentlyLoggedUser, NameBox, SurnameBox, UsernameBox, EmailBox, PhoneCodesComboBox, PhoneBox, true);
+            usersManager.changeRole(currentlyLoggedUser.Username, RolesComboBox.Text);
+            using (var db = new BookstoreLibContext())
+            {
+                currentlyLoggedUser = db.Users.FirstOrDefault(u => u.Id == currentlyLoggedUser.Id);
             }
         }
     }

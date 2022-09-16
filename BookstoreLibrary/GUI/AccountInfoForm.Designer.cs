@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SaveButton = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,6 +47,7 @@
             this.RolesComboBox = new System.Windows.Forms.ComboBox();
             this.ChangePasswordButton = new System.Windows.Forms.Button();
             this.AllowEditsCheckBox = new System.Windows.Forms.CheckBox();
+            this.ChangesChecker = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // SaveButton
@@ -58,6 +60,7 @@
             this.SaveButton.TabIndex = 35;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // GoBackButton
             // 
@@ -227,6 +230,10 @@
             this.AllowEditsCheckBox.UseVisualStyleBackColor = true;
             this.AllowEditsCheckBox.CheckedChanged += new System.EventHandler(this.AllowEditsCheckBox_CheckedChanged);
             // 
+            // ChangesChecker
+            // 
+            this.ChangesChecker.Tick += new System.EventHandler(this.ChangesChecker_Tick);
+            // 
             // AccountInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,5 +285,6 @@
         private System.Windows.Forms.ComboBox RolesComboBox;
         private System.Windows.Forms.Button ChangePasswordButton;
         private System.Windows.Forms.CheckBox AllowEditsCheckBox;
+        private System.Windows.Forms.Timer ChangesChecker;
     }
 }

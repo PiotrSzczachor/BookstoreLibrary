@@ -69,7 +69,7 @@ namespace BookstoreLibrary.Logic
             }
         }
 
-        public void editUser(bool emailChanged, bool usernameChanged, int userId, User currentlyLoggedUser, TextBox nameBox, TextBox surnameBox, TextBox usernameBox, TextBox emailBox, ComboBox phoneCode, TextBox phoneBox)
+        public void editUser(bool emailChanged, bool usernameChanged, int userId, User currentlyLoggedUser, TextBox nameBox, TextBox surnameBox, TextBox usernameBox, TextBox emailBox, ComboBox phoneCode, TextBox phoneBox, bool fromAccountForm = false)
         {
             using (var db = new BookstoreLibContext())
             {
@@ -77,7 +77,7 @@ namespace BookstoreLibrary.Logic
                 User userToEdit = db.Users.FirstOrDefault(u => u.Id == userId);
                 if (userToEdit != null)
                 {
-                    if (userToEdit.Id != currentlyLoggedUser.Id)
+                    if (userToEdit.Id != currentlyLoggedUser.Id || fromAccountForm)
                     {
                         if (emailChanged)
                         {
