@@ -225,6 +225,7 @@
             this.AllowEditsCheckBox.TabIndex = 40;
             this.AllowEditsCheckBox.Text = "Allow edits";
             this.AllowEditsCheckBox.UseVisualStyleBackColor = true;
+            this.AllowEditsCheckBox.CheckedChanged += new System.EventHandler(this.AllowEditsCheckBox_CheckedChanged);
             // 
             // AccountInfoForm
             // 

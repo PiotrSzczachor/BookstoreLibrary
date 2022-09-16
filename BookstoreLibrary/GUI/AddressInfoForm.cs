@@ -20,13 +20,15 @@ namespace BookstoreLibrary.GUI
         string initNumber;
         string initCity;
         string initPostalCode;
-        public AddressInfoForm(User currUser, User toCheck)
+        bool accountChecking;
+        public AddressInfoForm(User currUser, User toCheck, bool accountCheck = false)
         {
             InitializeComponent();
+            accountChecking = accountCheck;
             currentlyLoggedUser = currUser;
             userToCheck = toCheck;
             Initializer initializer = new Initializer();
-            initializer.initAddressInfo(StreetBox, NumberTextBox, CityBox, PostalCodeBox, toCheck);
+            initializer.initAddressInfo(StreetBox, NumberTextBox, CityBox, PostalCodeBox, userToCheck);
             initStreet = StreetBox.Text;
             initNumber = NumberTextBox.Text;
             initCity = CityBox.Text;
@@ -38,7 +40,14 @@ namespace BookstoreLibrary.GUI
         private void GoBackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new UsersManagementForm(currentlyLoggedUser).ShowDialog();
+            if (!accountChecking)
+            {
+                new UsersManagementForm(currentlyLoggedUser).ShowDialog();
+            } else
+            {
+                new AccountInfoForm(currentlyLoggedUser).ShowDialog();
+            }
+            
             this.Close();
         }
 

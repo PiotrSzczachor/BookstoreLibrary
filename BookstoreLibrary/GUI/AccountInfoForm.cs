@@ -56,14 +56,33 @@ namespace BookstoreLibrary.GUI
 
         private void ShowAddressButton_Click(object sender, EventArgs e)
         {
-            User user;
-            using (var db = new BookstoreLibContext())
-            {
-                user  = db.Users.FirstOrDefault(x => x.Id == userToCheckId);
-            }
             this.Hide();
-            new AddressInfoForm(currentlyLoggedUser, user).ShowDialog();
+            new AddressInfoForm(currentlyLoggedUser, currentlyLoggedUser, true).ShowDialog();
             this.Close();
+        }
+
+        private void AllowEditsCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AllowEditsCheckBox.Checked)
+            {
+                foreach (Control c in Controls)
+                {
+                    if (c is TextBox || c is ComboBox) { c.Enabled = true; }
+                }
+            } else
+            {
+                foreach(Control c in Controls)
+                {
+                    if (!(c is Label))
+                    {
+                        c.Enabled = false;
+                    }
+                }
+                AllowEditsCheckBox.Enabled = true;
+                GoBackButton.Enabled = true;
+                ShowAddressButton.Enabled = true;
+                ChangePasswordButton.Enabled = true;
+            }
         }
     }
 }
