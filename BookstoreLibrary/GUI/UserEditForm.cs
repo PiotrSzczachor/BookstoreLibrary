@@ -22,6 +22,8 @@ namespace BookstoreLibrary.GUI
         string initEmail;
         string initCountryCode;
         string initPhoneNumber;
+        bool emailChanged;
+        bool usernameChanged;
 
         public UserEditForm(User user, int id)
         {
@@ -65,6 +67,20 @@ namespace BookstoreLibrary.GUI
                     valuesChanged = true;
                 }
             }
+            if (initEmail != EmailBox.Text)
+            {
+                emailChanged = true;
+            } else
+            {
+                emailChanged = false;
+            }
+            if (initUsername != UsernameBox.Text)
+            {
+                usernameChanged = true;
+            } else
+            {
+                usernameChanged = false;
+            }
             if (!emptyValues && valuesChanged)
             {
                 SaveButton.Enabled = true;
@@ -78,7 +94,7 @@ namespace BookstoreLibrary.GUI
         private void SaveButton_Click(object sender, EventArgs e)
         {
             UsersManager usersManager = new UsersManager();
-            usersManager.editUser(userToEditId, currentlyLoggedUser, NameBox, SurnameBox, UsernameBox, EmailBox, PhoneCodesComboBox, PhoneBox);
+            usersManager.editUser(emailChanged, usernameChanged, userToEditId, currentlyLoggedUser, NameBox, SurnameBox, UsernameBox, EmailBox, PhoneCodesComboBox, PhoneBox);
         }
     }
 }

@@ -69,26 +69,53 @@ namespace BookstoreLibrary.Logic
             }
         }
 
-        public void editUser(int userId, User currentlyLoggedUser, TextBox nameBox, TextBox surnameBox, TextBox usernameBox, TextBox emailBox, ComboBox phoneCode, TextBox phoneBox)
+        public void editUser(bool emailChanged, bool usernameChanged, int userId, User currentlyLoggedUser, TextBox nameBox, TextBox surnameBox, TextBox usernameBox, TextBox emailBox, ComboBox phoneCode, TextBox phoneBox)
         {
             using (var db = new BookstoreLibContext())
             {
+                bool allowEdits = true;
                 User userToEdit = db.Users.FirstOrDefault(u => u.Id == userId);
                 if (userToEdit != null)
                 {
                     if (userToEdit.Id != currentlyLoggedUser.Id)
                     {
-                        string wholePhoneNumber = phoneCode.Text + phoneBox.Text;
-                        userToEdit.Name = nameBox.Text;
-                        userToEdit.Surname = surnameBox.Text;
-                        userToEdit.Username = usernameBox.Text;
-                        userToEdit.Email = emailBox.Text;
-                        userToEdit.PhoneNumber = wholePhoneNumber;
-                        db.SaveChanges();
-                        MessageBox.Show("User edited successfully",
-                                        "Success",
+                        if (emailChanged)
+                        {
+                            User check = db.Users.FirstOrDefault(u => u.Email == emailBox.Text);
+                            if (check != null)
+                            {
+                                allowEdits = false;
+                            }
+                        }
+                        if (usernameChanged)
+                        {
+                            User check = db.Users.FirstOrDefault(u => u.Username == usernameBox.Text);
+                            if (check != null)
+                            {
+                                allowEdits = false;
+                            }
+                        }
+                        if (allowEdits)
+                        {
+                            string wholePhoneNumber = phoneCode.Text + phoneBox.Text;
+                            userToEdit.Name = nameBox.Text;
+                            userToEdit.Surname = surnameBox.Text;
+                            userToEdit.Username = usernameBox.Text;
+                            userToEdit.Email = emailBox.Text;
+                            userToEdit.PhoneNumber = wholePhoneNumber;
+                            db.SaveChanges();
+                            MessageBox.Show("User edited successfully",
+                                            "Success",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Information);
+                        } else
+                        {
+                            MessageBox.Show("New email or username already exist in database",
+                                        "Information",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
+                        }
+
                     } else
                     {
                         MessageBox.Show("You can't edit your account here. If you want to, go to Account in menu.",
