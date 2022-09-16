@@ -86,5 +86,15 @@ namespace BookstoreLibrary.GUI
             new UserEditForm(currentlyLoggedUser, Int32.Parse(userIdStr)).ShowDialog();
             this.Close();
         }
+
+        private void ChangeRoleButton_Click(object sender, EventArgs e)
+        {
+            int selectedrowindex = UsersTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = UsersTable.Rows[selectedrowindex];
+            string userIdStr = Convert.ToString(selectedRow.Cells["Id"].Value);
+            this.Hide();
+            new ChangeRoleForm(currentlyLoggedUser, Int32.Parse(userIdStr)).ShowDialog();
+            this.Close();
+        }
     }
 }

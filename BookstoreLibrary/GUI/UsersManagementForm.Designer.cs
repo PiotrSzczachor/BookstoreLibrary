@@ -35,6 +35,7 @@
             this.EditButton = new System.Windows.Forms.Button();
             this.ShowAddressButton = new System.Windows.Forms.Button();
             this.GoBackButton = new System.Windows.Forms.Button();
+            this.ChangeRoleButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UsersTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(506, 410);
+            this.DeleteButton.Location = new System.Drawing.Point(546, 410);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(85, 28);
             this.DeleteButton.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // ShowHistoryButton
             // 
-            this.ShowHistoryButton.Location = new System.Drawing.Point(324, 410);
+            this.ShowHistoryButton.Location = new System.Drawing.Point(273, 410);
             this.ShowHistoryButton.Name = "ShowHistoryButton";
             this.ShowHistoryButton.Size = new System.Drawing.Size(85, 28);
             this.ShowHistoryButton.TabIndex = 3;
@@ -79,7 +80,7 @@
             // 
             // EditButton
             // 
-            this.EditButton.Location = new System.Drawing.Point(415, 410);
+            this.EditButton.Location = new System.Drawing.Point(364, 410);
             this.EditButton.Name = "EditButton";
             this.EditButton.Size = new System.Drawing.Size(85, 28);
             this.EditButton.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             // ShowAddressButton
             // 
-            this.ShowAddressButton.Location = new System.Drawing.Point(233, 410);
+            this.ShowAddressButton.Location = new System.Drawing.Point(182, 410);
             this.ShowAddressButton.Name = "ShowAddressButton";
             this.ShowAddressButton.Size = new System.Drawing.Size(85, 28);
             this.ShowAddressButton.TabIndex = 5;
@@ -107,11 +108,22 @@
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
             // 
+            // ChangeRoleButton
+            // 
+            this.ChangeRoleButton.Location = new System.Drawing.Point(455, 410);
+            this.ChangeRoleButton.Name = "ChangeRoleButton";
+            this.ChangeRoleButton.Size = new System.Drawing.Size(85, 28);
+            this.ChangeRoleButton.TabIndex = 7;
+            this.ChangeRoleButton.Text = "Change role";
+            this.ChangeRoleButton.UseVisualStyleBackColor = true;
+            this.ChangeRoleButton.Click += new System.EventHandler(this.ChangeRoleButton_Click);
+            // 
             // UsersManagementForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ChangeRoleButton);
             this.Controls.Add(this.GoBackButton);
             this.Controls.Add(this.ShowAddressButton);
             this.Controls.Add(this.EditButton);
@@ -137,5 +149,6 @@
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button ShowAddressButton;
         private System.Windows.Forms.Button GoBackButton;
+        private System.Windows.Forms.Button ChangeRoleButton;
     }
 }

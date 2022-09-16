@@ -305,9 +305,26 @@ namespace BookstoreLibrary.Logic
                         phoneNumber += wholePhoneNumber[i].ToString();
                     }
                 }
-                Console.WriteLine(countryCode);
                 phoneCode.Text = countryCode;
                 phoneBox.Text = phoneNumber;
+            }
+        }
+
+        public void initChangeRoleForm(int userId, TextBox usernameBox, ComboBox rolesComboBox)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                User user = db.Users.FirstOrDefault(u => u.Id == userId);
+                if (user != null)
+                {
+                    usernameBox.Text = user.Username;
+                    string[] roles = { "Admin", "User", "Seller" };
+                    foreach (string role in roles)
+                    {
+                        rolesComboBox.Items.Add(role);
+                    }
+                    rolesComboBox.Text = user.Role.Name;
+                }
             }
         }
     }

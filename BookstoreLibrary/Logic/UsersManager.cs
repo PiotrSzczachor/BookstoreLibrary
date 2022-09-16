@@ -126,5 +126,23 @@ namespace BookstoreLibrary.Logic
                 }
             }
         }
+
+        public void changeRole(string username, string newRole)
+        {
+            using (var db = new BookstoreLibContext())
+            {
+                Role role = db.Roles.FirstOrDefault(r => r.Name == newRole);
+                User user = db.Users.FirstOrDefault(u => u.Username == username);
+                if (user != null && role != null)
+                {
+                    user.Role = role;
+                    db.SaveChanges();
+                    MessageBox.Show("Role was edited successfully",
+                                    "Success",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                }
+            }
+        }
     }
 }

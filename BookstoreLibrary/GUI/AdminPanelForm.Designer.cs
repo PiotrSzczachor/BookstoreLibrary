@@ -74,6 +74,7 @@
             this.AccountButton.TabIndex = 3;
             this.AccountButton.Text = "Account";
             this.AccountButton.UseVisualStyleBackColor = true;
+            this.AccountButton.Click += new System.EventHandler(this.AccountButton_Click);
             // 
             // LogOutButton
             // 
