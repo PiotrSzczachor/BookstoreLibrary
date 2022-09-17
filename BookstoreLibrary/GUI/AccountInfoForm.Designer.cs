@@ -57,7 +57,7 @@
             this.SaveButton.Margin = new System.Windows.Forms.Padding(2);
             this.SaveButton.Name = "SaveButton";
             this.SaveButton.Size = new System.Drawing.Size(102, 29);
-            this.SaveButton.TabIndex = 35;
+            this.SaveButton.TabIndex = 10;
             this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
@@ -68,7 +68,7 @@
             this.GoBackButton.Margin = new System.Windows.Forms.Padding(2);
             this.GoBackButton.Name = "GoBackButton";
             this.GoBackButton.Size = new System.Drawing.Size(102, 29);
-            this.GoBackButton.TabIndex = 34;
+            this.GoBackButton.TabIndex = 7;
             this.GoBackButton.Text = "Go back";
             this.GoBackButton.UseVisualStyleBackColor = true;
             this.GoBackButton.Click += new System.EventHandler(this.GoBackButton_Click);
@@ -90,7 +90,7 @@
             this.UsernameBox.Margin = new System.Windows.Forms.Padding(2);
             this.UsernameBox.Name = "UsernameBox";
             this.UsernameBox.Size = new System.Drawing.Size(184, 20);
-            this.UsernameBox.TabIndex = 32;
+            this.UsernameBox.TabIndex = 2;
             // 
             // PhoneCodesComboBox
             // 
@@ -101,7 +101,7 @@
             this.PhoneCodesComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneCodesComboBox.Name = "PhoneCodesComboBox";
             this.PhoneCodesComboBox.Size = new System.Drawing.Size(55, 21);
-            this.PhoneCodesComboBox.TabIndex = 26;
+            this.PhoneCodesComboBox.TabIndex = 4;
             // 
             // label4
             // 
@@ -150,7 +150,7 @@
             this.PhoneBox.Margin = new System.Windows.Forms.Padding(2);
             this.PhoneBox.Name = "PhoneBox";
             this.PhoneBox.Size = new System.Drawing.Size(126, 20);
-            this.PhoneBox.TabIndex = 27;
+            this.PhoneBox.TabIndex = 5;
             // 
             // EmailBox
             // 
@@ -159,7 +159,7 @@
             this.EmailBox.Margin = new System.Windows.Forms.Padding(2);
             this.EmailBox.Name = "EmailBox";
             this.EmailBox.Size = new System.Drawing.Size(184, 20);
-            this.EmailBox.TabIndex = 25;
+            this.EmailBox.TabIndex = 3;
             // 
             // SurnameBox
             // 
@@ -168,7 +168,7 @@
             this.SurnameBox.Margin = new System.Windows.Forms.Padding(2);
             this.SurnameBox.Name = "SurnameBox";
             this.SurnameBox.Size = new System.Drawing.Size(184, 20);
-            this.SurnameBox.TabIndex = 24;
+            this.SurnameBox.TabIndex = 1;
             // 
             // NameBox
             // 
@@ -177,7 +177,7 @@
             this.NameBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(184, 20);
-            this.NameBox.TabIndex = 23;
+            this.NameBox.TabIndex = 0;
             // 
             // ShowAddressButton
             // 
@@ -185,7 +185,7 @@
             this.ShowAddressButton.Margin = new System.Windows.Forms.Padding(2);
             this.ShowAddressButton.Name = "ShowAddressButton";
             this.ShowAddressButton.Size = new System.Drawing.Size(102, 29);
-            this.ShowAddressButton.TabIndex = 36;
+            this.ShowAddressButton.TabIndex = 8;
             this.ShowAddressButton.Text = "Show address";
             this.ShowAddressButton.UseVisualStyleBackColor = true;
             this.ShowAddressButton.Click += new System.EventHandler(this.ShowAddressButton_Click);
@@ -208,14 +208,14 @@
             this.RolesComboBox.Location = new System.Drawing.Point(168, 113);
             this.RolesComboBox.Name = "RolesComboBox";
             this.RolesComboBox.Size = new System.Drawing.Size(184, 21);
-            this.RolesComboBox.TabIndex = 38;
+            this.RolesComboBox.TabIndex = 6;
             // 
             // ChangePasswordButton
             // 
             this.ChangePasswordButton.Location = new System.Drawing.Point(215, 157);
             this.ChangePasswordButton.Name = "ChangePasswordButton";
             this.ChangePasswordButton.Size = new System.Drawing.Size(102, 29);
-            this.ChangePasswordButton.TabIndex = 39;
+            this.ChangePasswordButton.TabIndex = 9;
             this.ChangePasswordButton.Text = "Change password";
             this.ChangePasswordButton.UseVisualStyleBackColor = true;
             // 

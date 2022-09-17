@@ -150,11 +150,8 @@ namespace BookstoreLibrary.GUI
         {
             UsersManager usersManager = new UsersManager();
             usersManager.editUser(emailChanged, usernameChanged, currentlyLoggedUser.Id, currentlyLoggedUser, NameBox, SurnameBox, UsernameBox, EmailBox, PhoneCodesComboBox, PhoneBox, true);
-            usersManager.changeRole(currentlyLoggedUser.Username, RolesComboBox.Text);
-            using (var db = new BookstoreLibContext())
-            {
-                currentlyLoggedUser = db.Users.FirstOrDefault(u => u.Id == currentlyLoggedUser.Id);
-            }
+            usersManager.changeRole(currentlyLoggedUser.Username, RolesComboBox.Text, true, currentlyLoggedUser);
+            Console.WriteLine(currentlyLoggedUser.Role.Name);
         }
     }
 }

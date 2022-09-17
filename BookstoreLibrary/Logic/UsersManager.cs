@@ -104,6 +104,10 @@ namespace BookstoreLibrary.Logic
                             userToEdit.Email = emailBox.Text;
                             userToEdit.PhoneNumber = wholePhoneNumber;
                             db.SaveChanges();
+                            if (fromAccountForm)
+                            {
+                                currentlyLoggedUser = userToEdit;
+                            }
                             MessageBox.Show("User edited successfully",
                                             "Success",
                                             MessageBoxButtons.OK,
@@ -127,7 +131,7 @@ namespace BookstoreLibrary.Logic
             }
         }
 
-        public void changeRole(string username, string newRole)
+        public void changeRole(string username, string newRole, bool fromAccountForm = false, User currentlyLoggedUser = null)
         {
             using (var db = new BookstoreLibContext())
             {
@@ -137,6 +141,10 @@ namespace BookstoreLibrary.Logic
                 {
                     user.Role = role;
                     db.SaveChanges();
+                    if (fromAccountForm)
+                    {
+                        currentlyLoggedUser.Role = role;
+                    }
                     MessageBox.Show("Role was edited successfully",
                                     "Success",
                                     MessageBoxButtons.OK,
