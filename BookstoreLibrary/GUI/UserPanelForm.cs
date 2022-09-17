@@ -19,5 +19,19 @@ namespace BookstoreLibrary.GUI
             InitializeComponent();
             currentlyLoggedUser = user;
         }
+
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new LoginForm().ShowDialog();
+            this.Close();
+        }
+
+        private void AccountButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new AccountInfoForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -48,6 +48,11 @@ namespace BookstoreLibrary.GUI
             initRole = RolesComboBox.Text;
             ChangesChecker.Enabled = true;
             ChangesChecker.Start();
+            if (currentlyLoggedUser.Role.Name != "Admin")
+            {
+                RoleLabel.Visible = false;
+                RolesComboBox.Visible = false;
+            }
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)
@@ -150,8 +155,10 @@ namespace BookstoreLibrary.GUI
         {
             UsersManager usersManager = new UsersManager();
             usersManager.editUser(emailChanged, usernameChanged, currentlyLoggedUser.Id, currentlyLoggedUser, NameBox, SurnameBox, UsernameBox, EmailBox, PhoneCodesComboBox, PhoneBox, true);
-            usersManager.changeRole(currentlyLoggedUser.Username, RolesComboBox.Text, true, currentlyLoggedUser);
-            Console.WriteLine(currentlyLoggedUser.Role.Name);
+            if (currentlyLoggedUser.Role.Name != "Admin")
+            {
+                usersManager.changeRole(currentlyLoggedUser.Username, RolesComboBox.Text, true, currentlyLoggedUser);
+            }
         }
     }
 }
