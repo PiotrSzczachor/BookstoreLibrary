@@ -31,7 +31,10 @@ namespace BookstoreLibrary.GUI
             ToolStripMenuItem filters = (ToolStripMenuItem)menuStrip1.Items[0];
             foreach (ToolStripMenuItem item in filters.DropDownItems)
             {
-                Console.WriteLine(item.Text);
+                if (item.Text == "Borrowed books" || item.Text == "Sold books")
+                {
+                    item.Visible = false;
+                }
             }
         }
 
