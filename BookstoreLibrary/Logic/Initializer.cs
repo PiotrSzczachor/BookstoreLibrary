@@ -45,7 +45,10 @@ namespace BookstoreLibrary.Logic
 
         public void initPostalCodes(ComboBox PostalCodesComboBox)
         {
-            using (var reader = new StreamReader(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Data\PostalCodes.csv"))
+            string startupPath = Environment.CurrentDirectory;
+            startupPath = startupPath.Replace(@"\bin\Debug", "");
+            string path = Path.Combine(startupPath, @"Data\");
+            using (var reader = new StreamReader(path + "PostalCodes.csv"))
             {
                 List<string> postalCodes = new List<string>();
                 bool header = true;

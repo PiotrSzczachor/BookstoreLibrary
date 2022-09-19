@@ -152,5 +152,42 @@ namespace BookstoreLibrary.Logic
                 }
             }
         }
+
+        public void changePassword(User user, string oldPassword, string newPassword)
+        {
+            Encoder encoder = new Encoder();
+            string encodedPassword = encoder.encodePassword(newPassword);
+            if (encoder.encodePassword(oldPassword) == user.Password)
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to change password?",
+                                                      "Confirmation",
+                                                      MessageBoxButtons.YesNo,
+                                                      MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    using (var db = new BookstoreLibContext())
+                    {
+                        User userToEdit = db.Users.FirstOrDefault(u => u.Id == user.Id);
+                        if (userToEdit != null)
+                        {
+                            userToEdit.Password = encodedPassword;
+                            db.SaveChanges();
+                            user = userToEdit;
+                        }
+                        MessageBox.Show("Password edited successfully",
+                                "Success",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+                    }
+                }
+
+            } else
+            {
+                MessageBox.Show("Old password is incorrect",
+                                "Bad password",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
+        }
     }
 }

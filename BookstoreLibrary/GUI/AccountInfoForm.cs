@@ -160,5 +160,12 @@ namespace BookstoreLibrary.GUI
                 usersManager.changeRole(currentlyLoggedUser.Username, RolesComboBox.Text, true, currentlyLoggedUser);
             }
         }
+
+        private void ChangePasswordButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new ChangePasswordForm(currentlyLoggedUser).ShowDialog();
+            this.Close();
+        }
     }
 }

@@ -10,30 +10,28 @@ using System.Windows.Forms;
 using BookstoreLibrary.GUI;
 using BookstoreLibrary.Logic;
 using BookstoreLibrary.Entities;
+using System.IO;
 
 namespace BookstoreLibrary
 {
     public partial class LoginForm : Form
     {
         User currentlyLoggedUser;
+        string path;
         public LoginForm()
         {
             InitializeComponent();
             Initializer initializer = new Initializer();
             initializer.initRolesIfDbIsEmpty();
+            string startupPath = Environment.CurrentDirectory;
+            startupPath = startupPath.Replace(@"\bin\Debug", "");
+            path = Path.Combine(startupPath, @"Images\");
         }
 
         private void ShowPasswordPictureBox_Click(object sender, EventArgs e)
         {
-            if (PasswordBox.UseSystemPasswordChar)
-            {
-                HideShowPassword.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Hide.png");
-                PasswordBox.UseSystemPasswordChar = false;
-            } else
-            {
-                HideShowPassword.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Show.png");
-                PasswordBox.UseSystemPasswordChar = true;
-            }
+            PasswordValidator passwordValidator = new PasswordValidator();
+            passwordValidator.changePasswordVisible(HideShowPassword, PasswordBox, path);
         }
 
         private void SigninButton_Click(object sender, EventArgs e)

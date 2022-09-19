@@ -218,6 +218,7 @@
             this.ChangePasswordButton.TabIndex = 9;
             this.ChangePasswordButton.Text = "Change password";
             this.ChangePasswordButton.UseVisualStyleBackColor = true;
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
             // 
             // AllowEditsCheckBox
             // 

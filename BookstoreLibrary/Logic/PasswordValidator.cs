@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -11,14 +12,21 @@ namespace BookstoreLibrary.Logic
 {
     public class PasswordValidator
     {
+        string path;
+        public PasswordValidator()
+        {
+            string startupPath = Environment.CurrentDirectory;
+            startupPath = startupPath.Replace(@"\bin\Debug", "");
+            path = Path.Combine(startupPath, @"Images\Icons\");
+        }
         public bool checkPasswordLength(string password, PictureBox icon)
         {
             if (password.Length >= 8)
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\accept.png");
+                icon.Image = Image.FromFile(path + "accept.png");
             } else
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\cancel.png");
+                icon.Image = Image.FromFile(path + "cancel.png");
             }
             return password.Length>=8;
         }
@@ -28,10 +36,10 @@ namespace BookstoreLibrary.Logic
             var specialCharRegex = new Regex("[^A-Za-z0-9]");
             if (specialCharRegex.IsMatch(password))
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\accept.png");
+                icon.Image = Image.FromFile(path + "accept.png");
             } else
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\cancel.png");
+                icon.Image = Image.FromFile(path + "cancel.png");
             }
             return password.Any(ch => !Char.IsLetterOrDigit(ch));
         }
@@ -40,10 +48,10 @@ namespace BookstoreLibrary.Logic
         {
             if (password.Any(char.IsUpper))
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\accept.png");
+                icon.Image = Image.FromFile(path + "accept.png");
             } else
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\cancel.png");
+                icon.Image = Image.FromFile(path + "cancel.png");
             }
             return password.Any(char.IsUpper);
         }
@@ -52,10 +60,10 @@ namespace BookstoreLibrary.Logic
         {
             if (password == rePassword)
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\accept.png");
+                icon.Image = Image.FromFile(path + "accept.png");
             } else
             {
-                icon.Image = Image.FromFile(@"C:\Users\piotr\source\repos\BookstoreLibrary\BookstoreLibrary\Images\Icons\cancel.png");
+                icon.Image = Image.FromFile(path + "cancel.png");
             }
             return password == rePassword;
         }
@@ -68,6 +76,20 @@ namespace BookstoreLibrary.Logic
             bool passwordsMatch = checkIfPasswordsMatch(password, rePassword, MatchIcon);
             bool result = minLen && specialChar && containsCapitalLetter && passwordsMatch;
             return result;
+        }
+
+        public void changePasswordVisible(PictureBox HideShowPassword, TextBox PasswordBox, string passwordIconPath)
+        {
+            if (PasswordBox.UseSystemPasswordChar)
+            {
+                HideShowPassword.Image = Image.FromFile(passwordIconPath + "Hide.png");
+                PasswordBox.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                HideShowPassword.Image = Image.FromFile(passwordIconPath + "Show.png");
+                PasswordBox.UseSystemPasswordChar = true;
+            }
         }
     }
 }

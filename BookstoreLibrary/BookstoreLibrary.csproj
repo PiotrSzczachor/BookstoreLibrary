@@ -282,6 +282,12 @@
     <Compile Include="GUI\BooksPanelForm.Designer.cs">
       <DependentUpon>BooksPanelForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\ChangeRoleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\BooksPanelForm.resx">
       <DependentUpon>BooksPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\ChangeRoleForm.resx">
       <DependentUpon>ChangeRoleForm.cs</DependentUpon>
