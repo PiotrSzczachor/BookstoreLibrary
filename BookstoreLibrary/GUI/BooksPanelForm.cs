@@ -22,6 +22,17 @@ namespace BookstoreLibrary.GUI
             Initializer initializer = new Initializer();
             initializer.initBooksPanel(BooksTable, BooksTypeLabel);
             BooksTypeLabel.Left = (this.Width - BooksTypeLabel.Width) / 2;
+            if (currentlyLoggedUser.Role.IsUser)
+            {
+                AddButton.Visible = false;
+                EditButton.Visible = false;
+                DeleteButton.Visible = false;
+            }
+            ToolStripMenuItem filters = (ToolStripMenuItem)menuStrip1.Items[0];
+            foreach (ToolStripMenuItem item in filters.DropDownItems)
+            {
+                Console.WriteLine(item.Text);
+            }
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)

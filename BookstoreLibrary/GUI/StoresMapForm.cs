@@ -22,6 +22,12 @@ namespace BookstoreLibrary.GUI
             currentlyLoggedUser = user;
             Initializer initializer = new Initializer();
             initializer.initStoresList(StoresList);
+            if (currentlyLoggedUser.Role.Name == "User")
+            {
+                AddStoreButton.Visible = false;
+                EditStoreButton.Visible = false;
+                DeleteStoreButton.Visible = false;
+            }
         }
 
         private void GoBackButton_Click(object sender, EventArgs e)

@@ -33,6 +33,7 @@
             this.AccountButton = new System.Windows.Forms.Button();
             this.StoresButton = new System.Windows.Forms.Button();
             this.BooksButton = new System.Windows.Forms.Button();
+            this.MyBooksButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // InfoLabel
@@ -46,7 +47,7 @@
             // 
             // LogOutButton
             // 
-            this.LogOutButton.Location = new System.Drawing.Point(35, 182);
+            this.LogOutButton.Location = new System.Drawing.Point(35, 229);
             this.LogOutButton.Name = "LogOutButton";
             this.LogOutButton.Size = new System.Drawing.Size(117, 41);
             this.LogOutButton.TabIndex = 10;
@@ -56,7 +57,7 @@
             // 
             // AccountButton
             // 
-            this.AccountButton.Location = new System.Drawing.Point(35, 135);
+            this.AccountButton.Location = new System.Drawing.Point(35, 182);
             this.AccountButton.Name = "AccountButton";
             this.AccountButton.Size = new System.Drawing.Size(117, 41);
             this.AccountButton.TabIndex = 9;
@@ -66,12 +67,13 @@
             // 
             // StoresButton
             // 
-            this.StoresButton.Location = new System.Drawing.Point(35, 88);
+            this.StoresButton.Location = new System.Drawing.Point(35, 135);
             this.StoresButton.Name = "StoresButton";
             this.StoresButton.Size = new System.Drawing.Size(117, 41);
             this.StoresButton.TabIndex = 8;
             this.StoresButton.Text = "Stores";
             this.StoresButton.UseVisualStyleBackColor = true;
+            this.StoresButton.Click += new System.EventHandler(this.StoresButton_Click);
             // 
             // BooksButton
             // 
@@ -81,12 +83,23 @@
             this.BooksButton.TabIndex = 6;
             this.BooksButton.Text = "Books";
             this.BooksButton.UseVisualStyleBackColor = true;
+            this.BooksButton.Click += new System.EventHandler(this.BooksButton_Click);
+            // 
+            // MyBooksButton
+            // 
+            this.MyBooksButton.Location = new System.Drawing.Point(35, 88);
+            this.MyBooksButton.Name = "MyBooksButton";
+            this.MyBooksButton.Size = new System.Drawing.Size(117, 41);
+            this.MyBooksButton.TabIndex = 12;
+            this.MyBooksButton.Text = "My books";
+            this.MyBooksButton.UseVisualStyleBackColor = true;
             // 
             // UserPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(183, 233);
+            this.ClientSize = new System.Drawing.Size(183, 278);
+            this.Controls.Add(this.MyBooksButton);
             this.Controls.Add(this.InfoLabel);
             this.Controls.Add(this.LogOutButton);
             this.Controls.Add(this.AccountButton);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Button AccountButton;
         private System.Windows.Forms.Button StoresButton;
         private System.Windows.Forms.Button BooksButton;
+        private System.Windows.Forms.Button MyBooksButton;
     }
 }
